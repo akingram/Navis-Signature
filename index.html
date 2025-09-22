@@ -16,7 +16,7 @@
         :root {
             --gold: #c8a97e;
             --dark: #1a1a1a;
-            --light: #f8f5f2;
+            --light: #f8f5f238;
             --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
@@ -45,7 +45,7 @@
             align-items: center;
             padding: 1.5rem 5%;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.416);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
@@ -63,11 +63,14 @@
             text-decoration: none;
             display: flex;
             align-items: center;
+            flex-shrink: 0;
         }
         
         .logo img {
             height: 50px;
+            width: auto;
             filter: brightness(0.9) contrast(1.1) saturate(1.2);
+            object-fit: contain;
         }
         
         .nav-links {
@@ -124,6 +127,83 @@
         .nav-icon:hover {
             color: var(--gold);
             transform: translateY(-2px);
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            padding: 5px;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 80px);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: var(--transition);
+        }
+        
+        .mobile-nav.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .mobile-nav-links {
+            list-style: none;
+            padding: 2rem;
+        }
+        
+        .mobile-nav-links li {
+            margin: 2rem 0;
+        }
+        
+        .mobile-nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: block;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            transition: var(--transition);
+        }
+        
+        .mobile-nav-links a:hover, .mobile-nav-links a.active {
+            color: var(--gold);
+            padding-left: 1rem;
         }
         
         /* Page Container */
@@ -557,7 +637,7 @@
             max-width: 600px;
             margin: 2rem auto 0;
             line-height: 1.8;
-            color: #d6d6d6;
+            color: #d6d6d6b4;
         }
         
         .about-content {
@@ -876,6 +956,7 @@
             color: #555;
             line-height: 1.8;
             padding-right: 2rem;
+            display: none;
         }
         
         /* Footer */
@@ -974,17 +1055,42 @@
         }
         
         @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5%;
+            }
+            
             .nav-links {
                 display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .mobile-nav {
+                display: block;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .logo img {
+                height: 35px;
             }
             
             .hero {
                 text-align: center;
                 justify-content: center;
+                padding: 0 5%;
             }
             
             .hero-content {
                 max-width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
             }
             
             .hero-image {
@@ -1002,10 +1108,63 @@
             .gallery-categories {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
+            }
+            
+            .gallery-category {
+                width: 200px;
+                text-align: center;
+            }
+            
+            .section-header h2, .gallery-header h2, .about-header h2, .contact-header h2 {
+                font-size: 2.5rem;
+            }
+            
+            .home-section, .testimonials {
+                padding: 4rem 5%;
+            }
+            
+            .gallery-container, .about-container, .contact-container {
+                padding: 3rem 1rem;
+            }
+            
+            .mission-vision {
+                padding: 2rem;
+            }
+            
+            .mission-vision-item p {
+                padding-left: 0;
+            }
+            
+            .faq-answer {
+                padding-right: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 0.8rem;
+            }
+            
+            .collection-card, .testimonial-card, .process-step {
+                padding: 1.5rem;
+            }
+            
+            .gallery-item img {
+                height: 250px;
+            }
+            
+            .logo {
+                font-size: 1.2rem;
             }
             
             .logo img {
-                height: 40px;
+                height: 30px;
             }
         }
     </style>
