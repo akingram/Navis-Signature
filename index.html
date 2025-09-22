@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navis Signature | Artisanal Footwear</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --gold: #c8a97e;
+            --dark: #1a1a1a;
+            --light: #f8f5f2;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+            background: var(--light);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        nav.scrolled {
+            padding: 1rem 5%;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            filter: brightness(0.9) contrast(1.1) saturate(1.2);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin: 0 1.2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after, .nav-links a.active:after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--gold);
+        }
+        
+        .nav-icons {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-icon {
+            font-size: 1.2rem;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .nav-icon:hover {
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+        
+        /* Page Container */
+        .page {
+            width: 100%;
+            min-height: 100vh;
+            padding-top: 80px;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        
+        .page.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        /* Home Page */
+        #home-page {
+            background: linear-gradient(135deg, #f8f5f2 0%, #e6dfd8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10%;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 550px;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: var(--gold);
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            border-radius: 0;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.6s ease;
+        }
+        
+        .btn:hover:before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            background: #b8976a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(200, 169, 126, 0.3);
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 5%;
+            bottom: 0;
+            height: 85%;
+            z-index: 1;
+            filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.2));
+            transition: var(--transition);
+        }
+        
+        .hero-image:hover {
+            transform: translateY(-10px);
+            filter: drop-shadow(0 35px 45px rgba(0, 0, 0, 0.25));
+        }
+        
+        .featured-in {
+            position: absolute;
+            bottom: 40px;
+            left: 10%;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .featured-in p {
+            font-size: 0.9rem;
+            color: #777;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        
+        .brand-logos {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .brand-logos span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #999;
+            font-style: italic;
+        }
+        
+        /* Home Page Sections */
+        .home-section {
+            padding: 6rem 10%;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .section-header p {
+            max-width: 700px;
+            margin: 2rem auto 0;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .collection-card {
+            background: white;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .collection-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        
+        .collection-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .collection-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonials {
+            background: var(--dark);
+            color: var(--light);
+            padding: 6rem 10%;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-left: 3px solid var(--gold);
+            transition: var(--transition);
+        }
+        
+        .testimonial-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+            color: var(--gold);
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        /* Gallery Page */
+        #gallery-page {
+            background: linear-gradient(135deg, #f9f7f6 0%, #f0ece9 100%);
+        }
+        
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .gallery-header h2 {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .gallery-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .gallery-header p {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 2.5rem 2rem 2rem;
+            color: white;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-item-overlay p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .gallery-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .gallery-category {
+            padding: 0.8rem 1.8rem;
+            background: white;
+            border: 1px solid #eee;
+            color: #555;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        .gallery-category.active, .gallery-category:hover {
+            background: var(--gold);
+            color: white;
+            border-color: var(--gold);
+        }
+        
+        /* About Page */
+        #about-page {
+            background: linear-gradient(135deg, #0a0a0a 0%, #2a2a2a 100%);
+            color: var(--light);
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        
+        .about-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .about-header h2 {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .about-header p {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            line-height: 1.8;
+            color: #d6d6d6;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+        
+        .about-image {
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+        
+        .about-image:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(200, 169, 126, 0.2), transparent);
+            z-index: 1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--gold);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #d6d6d6;
+        }
+        
+        .mission-vision {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 5px;
+            margin: 4rem 0;
+        }
+        
+        .mission-vision h3 {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .mission-vision-item {
+            margin-bottom: 2.5rem;
+        }
+        
+        .mission-vision-item h4 {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .mission-vision-item h4 i {
+            margin-right: 1rem;
+        }
+        
+        .mission-vision-item p {
+            line-height: 1.8;
+            color: #d6d6d6;
+            padding-left: 2.5rem;
+        }
+        
+        .craftsmanship-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            background: rgba(200, 169, 126, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-text {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #d6d6d6;
+        }
+        
+        .process-section {
+            margin: 6rem 0;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+        
+        .process-step:hover {
+            background: rgba(200, 169, 126, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+        
+        .process-step h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+        
+        .process-step p {
+            color: #d6d6d6;
+            line-height: 1.6;
+        }
+        
+        /* Contact Page */
+        #contact-page {
+            background: linear-gradient(135deg, #f8f5f2 0%, #e6dfd8 100%);
+        }
+        
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .contact-header h2 {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .contact-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .contact-header p {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+        
+        .contact-info p {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .contact-details {
+            margin-top: 2rem;
+        }
+        
+        .contact-details div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-details i {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-right: 1.5rem;
+            width: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            background: white;
+            transition: var(--transition);
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 2px rgba(200, 169, 126, 0.2);
+        }
+        
+        .contact-form textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+        
+        .contact-form button {
+            padding: 1.2rem 2.5rem;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .contact-form button:hover {
+            background: #b8976a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(200, 169, 126, 0.3);
+        }
+        
+        .map-container {
+            margin-top: 5rem;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-section {
+            margin: 6rem 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2rem;
+        }
+        
+        .faq-question {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            color: #555;
+            line-height: 1.8;
+            padding-right: 2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #d6d6d6;
+            padding: 5rem 2rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+        }
+        
+        .footer-column p, .footer-column a {
+            margin-bottom: 1rem;
+            display: block;
+            color: #d6d6d6;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #3a3a3a;
+            color: #d6d6d6;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--gold);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #3a3a3a;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .about-content, .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero-image {
+                opacity: 0.3;
+                right: 0;
+            }
+            
+            .featured-in {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .home-section, .testimonials {
+                padding: 4rem 5%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                text-align: center;
+                justify-content: center;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+            }
+            
+            .hero-image {
+                display: none;
+            }
+            
+            .gallery-grid, .collections-grid, .testimonial-grid, .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .craftsmanship-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-categories {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .logo img {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="/index.html" class="logo"><img src="images/image0.png" alt="Navis Signature"></a>
+        <ul class="nav-links">
+            <li><a href="#home" class="active" data-page="home">Home</a></li>
+            <li><a href="#gallery" data-page="gallery">Gallery</a></li>
+            <li><a href="#about" data-page="about">About</a></li>
+            <li><a href="#contact" data-page="contact">Contact</a></li>
+        </ul>
+        <!-- <div class="nav-icons">
+            <div class="nav-icon"><i class="fas fa-search"></i></div>
+            <div class="nav-icon"><i class="fas fa-shopping-bag"></i></div>
+            <div class="nav-icon"><i class="fas fa-user"></i></div>
+        </div> -->
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home-page" class="page active">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Where Art<br> Meets<br> 
+                    Craftsmanship</h1>
+                <p>Navis Signature combines centuries-old artisan techniques with contemporary design to create footwear that transcends time and trends. Each pair tells a story of meticulous craftsmanship and unparalleled attention to detail.</p>
+                <a href="#gallery" class="btn" data-page="gallery">Discover Collection</a>
+            </div>
+            
+            <div class="featured-in">
+                <p></p>
+                <div class="brand-logos">
+                    <!-- <span>Vogue</span>
+                    <span>GQ</span>
+                    <span>Esquire</span>
+                    <span></span> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Collections Section -->
+        <div class="home-section">
+            <div class="section-header">
+                <h2>Our Collections</h2>
+                <p>Explore our exclusive range of handcrafted footwear, each collection telling a unique story of style, comfort, and unparalleled craftsmanship.</p>
+            </div>
+            
+            <div class="collections-grid">
+                <div class="collection-card">
+                    <div class="collection-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Heritage Collection</h3>
+                    <p>Timeless designs that pay homage to traditional shoemaking techniques with a modern sensibility.</p>
+                    <a href="#gallery" class="btn" data-page="gallery" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">View Collection</a>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Limited Editions</h3>
+                    <p>Exclusive designs produced in limited quantities for the discerning collector of fine footwear.</p>
+                    <a href="#gallery" class="btn" data-page="gallery" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">View Collection</a>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-icon">
+                        <i class="fas fa-feather"></i>
+                    </div>
+                    <h3>Modern Essentials</h3>
+                    <p>Contemporary designs that blend comfort with style for the modern lifestyle.</p>
+                    <a href="#gallery" class="btn" data-page="gallery" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">View Collection</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials Section -->
+        <div class="testimonials">
+            <div class="section-header">
+                <h2>Client Testimonials</h2>
+                <p>Hear what our distinguished clients have to say about their experience with Navis Signature footwear.</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I've been wearing Navis Signature shoes for over a decade, and nothing else compares. The craftsmanship is exceptional, and they only get better with age."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="James Wilson">
+                        </div>
+                        <div class="author-info">
+                            <h4>James Wilson</h4>
+                            <p>Business Executive</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The attention to detail in every pair of Navis Signature shoes is remarkable. I appreciate that each pair is truly unique and made with such passion."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Fashion Editor</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"As a collector of fine footwear, I can confidently say that Navis Signature represents the pinnacle of artisan shoemaking. Their limited editions are particularly exquisite."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Michael Chen">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Art Collector</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Page -->
+    <section id="gallery-page" class="page">
+        <div class="gallery-container">
+            <div class="gallery-header">
+                <h2>Our Collection</h2>
+                <p>Discover the artistry and craftsmanship behind each pair of Navis Signature shoes. From classic designs to contemporary masterpieces, each pair is a testament to our dedication to excellence.</p>
+            </div>
+            
+            <div class="gallery-categories">
+                <div class="gallery-category active">All Collections</div>
+                <div class="gallery-category">Classic Series</div>
+                <div class="gallery-category">Modern Collection</div>
+                <div class="gallery-category">Limited Edition</div>
+                <div class="gallery-category">Bespoke Designs</div>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Using the image names from your file list -->
+                <div class="gallery-item">
+                    <img src="images/image1.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Classic Oxford</h3>
+                        <p>Timeless elegance | Hand-stitched leather</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image2.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Modern Loafers</h3>
+                        <p>Contemporary comfort | Premium suede</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image3.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Artisan Boots</h3>
+                        <p>Rugged sophistication | Weather-resistant</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image4.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Evening Formal</h3>
+                        <p>Black tie excellence | Patent leather</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image5.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Casual Elegance</h3>
+                        <p>Relaxed refinement | Italian calfskin</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image6.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Limited Edition</h3>
+                        <p>Exclusive designs | Numbered series</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image7.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Heritage Wingtip</h3>
+                        <p>Classic broguing | Antiqued finish</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image8.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Driver Moccasins</h3>
+                        <p>Casual luxury | Flexible sole</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image9.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Chelsea Boots</h3>
+                        <p>Modern classic | Elastic side panels</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image10.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Monk Strap</h3>
+                        <p>Sophisticated design | Buckle detail</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image11.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Double Monk</h3>
+                        <p>Contemporary classic | Dual buckle</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image12.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Penny Loafers</h3>
+                        <p>Timeless style | Slip-on comfort</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image13.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Tassel Loafers</h3>
+                        <p>Elegant detailing | Premium leather</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image14.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Cap Toe Derby</h3>
+                        <p>Classic design | Versatile style</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image15.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Whole Cut Oxford</h3>
+                        <p>Minimalist elegance | Single piece construction</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image16.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Brogue Boots</h3>
+                        <p>Detailed craftsmanship | All-weather performance</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image17.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Desert Boots</h3>
+                        <p>Casual comfort | Suede construction</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image18.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Formal Opera</h3>
+                        <p>Black tie elegance | Patent finish</p>
+                    </div>
+                </div>
+                <!-- <div class="gallery-item">
+                    <img src="images/image19.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Leisure Slip-ons</h3>
+                        <p>Relaxed sophistication | Memory foam comfort</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image20.jpg" alt="Navis Signature Footwear">
+                    <div class="gallery-item-overlay">
+                        <h3>Country Derby</h3>
+                        <p>Rustic charm | Durable construction</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Page -->
+    <section id="about-page" class="page">
+        <div class="about-container">
+            <div class="about-header">
+                <h2>Our Story</h2>
+                <p>For over three years, the Navis Signature name has been synonymous with uncompromising quality and artisanal excellence in footwear craftsmanship.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="/images/image00.jpg" alt="Artisan at work">
+                </div>
+                <div class="about-text">
+                    <h3>Where Tradition Meets Innovation</h3>
+                    <p>Founded in 2023 by master craftsman Antonio Navis, our workshop began as a small family operation in the heart of africa. Today, while we've grown in reputation and reach, we remain committed to the principles that defined us from the beginning.</p>
+                    <p>Each pair of Navis Signature shoes represents over 200 hours of meticulous handiwork, utilizing techniques passed down through generations while incorporating modern advancements in comfort and sustainability.</p>
+                    <p>We source only the finest materials from ethical suppliers around the world, ensuring that every component meets our exacting standards for quality, durability, and aesthetic appeal.</p>
+                    
+                    <div class="craftsmanship-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-text">Years of Excellence</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-text">Hours per Pair</div>
+                        </div>
+                        <!-- <div class="stat-item">
+                            <div class="stat-number">47</div>
+                            <div class="stat-text">Master Artisans</div>
+                        </div> -->
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-text">Handcrafted</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission and Vision Section -->
+            <div class="mission-vision">
+                <h3>Our Mission & Vision</h3>
+                
+                <div class="mission-vision-item">
+                    <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
+                    <p>To create exceptional footwear that combines timeless artistry with modern comfort, preserving traditional craftsmanship while innovating for the future. We are committed to sustainable practices, ethical sourcing, and creating products that stand the test of time in both quality and style.</p>
+                </div>
+                
+                <div class="mission-vision-item">
+                    <h4><i class="fas fa-eye"></i> Our Vision</h4>
+                    <p>To be recognized globally as the pinnacle of artisanal footwear, where each pair tells a story of heritage, passion, and unparalleled attention to detail. We envision a world where quality triumphs over quantity, and where consumers value the story behind the products they wear.</p>
+                </div>
+            </div>
+
+            <!-- Craftsmanship Process -->
+            <div class="process-section">
+                <div class="section-header">
+                    <h2>Our Craftsmanship Process</h2>
+                    <p>Every pair of Navis Signature shoes undergoes a meticulous creation process that blends time-honored techniques with innovative approaches.</p>
+                </div>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <h4>Material Selection</h4>
+                        <p>We source only the finest leathers and materials from trusted suppliers around the world, ensuring exceptional quality and sustainability.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <h4>Pattern Cutting</h4>
+                        <p>Each design is carefully patterned by hand, paying meticulous attention to grain direction and leather characteristics.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <h4>Hand Stitching</h4>
+                        <p>Our artisans employ traditional stitching techniques that allow for flexibility and durability that machine stitching cannot replicate.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <h4>Lasting & Soling</h4>
+                        <p>The upper is carefully stretched over a last and attached to the sole using techniques that ensure perfect fit and comfort.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">05</div>
+                        <h4>Finishing</h4>
+                        <p>Each shoe undergoes multiple stages of polishing and finishing to achieve the distinctive Navis Signature appearance.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">06</div>
+                        <h4>Quality Assurance</h4>
+                        <p>Every pair is rigorously inspected to ensure it meets our exacting standards before being prepared for delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact-page" class="page">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>Get In Touch</h2>
+                <p>We'd love to hear from you. Reach out to us for inquiries, collaborations, or to experience our bespoke service.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Connect With Navis Signature</h3>
+                    <p>Our team of experts is available to assist you with any questions about our products, custom orders, or the craftsmanship behind our collections. We welcome visits to our workshop by appointment.</p>
+                    <div class="contact-details">
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Via della Spiga, 48<br>20121 Milano MI, Italy</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-phone"></i>
+                            <p>+39 02 1234 5678</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <p>info@navissignature.com</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-clock"></i>
+                            <p>Mon-Fri: 9AM - 6PM<br>Sat: 10AM - 4PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject">
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <img src="https://images.unsplash.com/photo-1572816703439-d6b1e2edc5c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Store Location" style="width:100%; height:300px; object-fit:cover;">
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Find answers to common questions about our products, services, and craftsmanship process.</p>
+                </div>
+                
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How long does it take to create a pair of Navis Signature shoes?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Each pair of Navis Signature shoes requires between 4-8 weeks to complete, depending on the complexity of the design and materials. Our bespoke service may take longer, typically 8-12 weeks, as it involves multiple fittings and custom last creation.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do you offer international shipping?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes, we ship worldwide. All international orders are shipped via express courier with full tracking and insurance. Delivery times vary by location but typically range from 2-5 business days after completion.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What makes Navis Signature shoes different from other luxury brands?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Our shoes are entirely handcrafted by master artisans using traditional techniques that have been refined over generations. We use only the finest materials, and each pair undergoes rigorous quality control. Unlike many luxury brands, we maintain complete control over our production process from start to finish.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How should I care for my Navis Signature shoes?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            We recommend using high-quality shoe trees when not wearing your shoes. Clean them regularly with a soft brush or cloth, and use conditioners and polishes appropriate for the specific leather. Avoid wearing the same pair consecutive days to allow them to air properly. We offer a complimentary care guide with every purchase.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do you offer a repair service?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes, we provide a comprehensive repair and refurbishment service for all Navis Signature shoes. This includes sole replacement, heel repair, reconditioning, and more. We strive to extend the life of your investment pieces for many years to come.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Navis Signature</h3>
+                <p>Creating exceptional footwear through traditional craftsmanship and innovative design since 2023.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="#gallery" data-page="gallery">Collections</a>
+                <a href="#about" data-page="about">Bespoke Services</a>
+                <a href="#about" data-page="about">Craftsmanship</a>
+                <a href="#about" data-page="about">Sustainability</a>
+                <a href="#gallery" data-page="gallery">New Arrivals</a>
+                <a href#="#gallery" data-page="gallery">Limited Editions</a>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="#contact" data-page="contact">Client Care</a>
+                <a href="#contact" data-page="contact">Size Guide</a>
+                <a href="#contact" data-page="contact">Shipping & Returns</a>
+                <a href="#contact" data-page="contact">FAQ</a>
+                <a href="#contact" data-page="contact">Repair Services</a>
+                <a href="#contact" data-page="contact">Care Instructions</a>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive updates on new collections and exclusive events.</p>
+                <form>
+                    <input type="email" placeholder="Your email address" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: none; border-radius: 0;">
+                    <button type="submit" style="padding: 0.8rem 1.5rem; background: var(--gold); color: white; border: none; border-radius: 0; cursor: pointer; width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Navis Signature. All rights reserved. Crafted with passion in africa.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation and Page Switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-links a, .btn[data-page], .footer-column a[data-page]');
+            const pages = document.querySelectorAll('.page');
+            
+            // Function to switch pages
+            function switchPage(pageId) {
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                document.getElementById(pageId + '-page').classList.add('active');
+                
+                // Update active class on nav links
+                navLinks.forEach(link => {
+                    if (link.getAttribute('data-page') === pageId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+                
+                // Update URL hash
+                window.location.hash = pageId;
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }
+            
+            // Add click event to nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    switchPage(pageId);
+                });
+            });
+            
+            // Check URL hash on load
+            function checkHash() {
+                const hash = window.location.hash.substring(1);
+                if (hash && document.getElementById(hash + '-page')) {
+                    switchPage(hash);
+                } else {
+                    switchPage('home');
+                }
+            }
+            
+            window.addEventListener('hashchange', checkHash);
+            checkHash();
+            
+            // Nav scroll effect
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+            
+            // Gallery category selection
+            const galleryCategories = document.querySelectorAll('.gallery-category');
+            galleryCategories.forEach(category => {
+                category.addEventListener('click', function() {
+                    galleryCategories.forEach(cat => cat.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // FAQ accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    if (answer.style.display === 'block') {
+                        answer.style.display = 'none';
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    } else {
+                        answer.style.display = 'block';
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
