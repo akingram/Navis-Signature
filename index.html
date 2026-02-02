@@ -1396,10 +1396,10 @@
             
             <div class="gallery-categories">
                 <div class="gallery-category active">All Collections</div>
-                <div class="gallery-category">Classic Series</div>
+                <!-- <div class="gallery-category">Classic Series</div>
                 <div class="gallery-category">Modern Collection</div>
                 <div class="gallery-category">Limited Edition</div>
-                <div class="gallery-category">Bespoke Designs</div>
+                <div class="gallery-category">Bespoke Designs</div> -->
             </div>
             
             <div class="gallery-grid">
@@ -1539,7 +1539,7 @@
         <div class="about-container">
             <div class="about-header">
                 <h2>Our Story</h2>
-                <p>For over three years, the Navis Signature name has been synonymous with uncompromising quality and artisanal excellence in footwear craftsmanship.</p>
+                <p>For over Eight years, the Navis Signature name has been synonymous with uncompromising quality and artisanal excellence in footwear craftsmanship.</p>
             </div>
             <div class="about-content">
                 <div class="about-image">
@@ -1660,7 +1660,7 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
                         <div>
                             <i class="fas fa-phone"></i>
                             <p>+233 20 063 5642</p>
-                             <p>+234 816 466 9262</p>
+                            <p>+234 816 466 9262</p>
                         </div>
                         <div>
                             <i class="fas fa-envelope"></i>
@@ -1754,7 +1754,7 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
         <div class="footer-content">
             <div class="footer-column">
                 <h3>Navis Signature</h3>
-                <p>Creating exceptional footwear through traditional craftsmanship and innovative design since 2023.</p>
+                <p>Creating exceptional footwear through traditional craftsmanship and innovative design since 2018.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-pinterest"></i></a>
@@ -1917,6 +1917,36 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(el);
             });
+            
+            // WhatsApp Order Links Functionality
+            function setupWhatsAppOrderLinks() {
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                
+                galleryItems.forEach(item => {
+                    const img = item.querySelector('img');
+                    const title = item.querySelector('.gallery-item-overlay h3')?.textContent || 'Navis Signature Footwear';
+                    const description = item.querySelector('.gallery-item-overlay p')?.textContent || 'Premium Handcrafted Footwear';
+                    const imgSrc = img.src;
+                    
+                    // Make the entire gallery item clickable
+                    item.style.cursor = 'pointer';
+                    
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Create WhatsApp message with product details
+                        const phoneNumber = '233200635642'; // Ghana number
+                        const message = `Hello Navis Signature!%0A%0AI would like to order this item:%0A%0A*Product:* ${title}%0A*Description:* ${description}%0A*Image:* ${imgSrc}%0A%0APlease provide me with more details about availability, pricing, and sizing options.`;
+                        
+                        // Open WhatsApp with the message
+                        const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+                        window.open(whatsappURL, '_blank');
+                    });
+                });
+            }
+            
+            // Initialize WhatsApp order links
+            setupWhatsAppOrderLinks();
         });
     </script>
 </body>
