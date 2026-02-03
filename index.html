@@ -14,12 +14,16 @@
         }
         
         :root {
-            --gold: #c8a97e;
-            --dark: #1a1a1a;
-            --light: #f8f5f2;
+            --primary-blue: #1e3a8a;
+            --accent-blue: #3b82f6;
+            --light-blue: #eff6ff;
+            --navy-blue: #1e40af;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --white: #ffffff;
             --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --shadow: 0 10px 30px rgba(30, 58, 138, 0.08);
+            --shadow-hover: 0 20px 40px rgba(30, 58, 138, 0.12);
         }
         
         body {
@@ -47,22 +51,22 @@
             align-items: center;
             padding: 1.5rem 5%;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 20px rgba(30, 58, 138, 0.05);
             transition: var(--transition);
         }
         
         nav.scrolled {
             padding: 1rem 5%;
-            background: rgba(255, 255, 255, 0.98);
+            background: var(--white);
         }
         
         .logo {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2rem;
             font-weight: 700;
-            color: var(--dark);
+            color: var(--primary-blue);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -72,12 +76,13 @@
         
         .logo:hover {
             transform: translateY(-2px);
+            color: var(--accent-blue);
         }
         
         .logo img {
             height: 50px;
             width: auto;
-            filter: brightness(0.9) contrast(1.1) saturate(1.2);
+            filter: brightness(0.9) contrast(1.1);
             object-fit: contain;
         }
         
@@ -108,7 +113,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gold);
+            background: var(--accent-blue);
             transition: var(--transition);
         }
         
@@ -117,7 +122,7 @@
         }
         
         .nav-links a:hover, .nav-links a.active {
-            color: var(--gold);
+            color: var(--accent-blue);
         }
         
         /* Mobile Menu Toggle */
@@ -136,7 +141,7 @@
         .mobile-menu-toggle span {
             width: 25px;
             height: 3px;
-            background: var(--dark);
+            background: var(--primary-blue);
             border-radius: 3px;
             transition: var(--transition);
         }
@@ -197,7 +202,7 @@
         }
         
         .mobile-nav-links a:hover, .mobile-nav-links a.active {
-            color: var(--gold);
+            color: var(--accent-blue);
             padding-left: 1rem;
         }
         
@@ -229,7 +234,7 @@
             justify-content: space-between;
             padding: 0 10%;
             position: relative;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), 
                         url('https://images.unsplash.com/photo-1605812860427-4024433a70fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80') no-repeat center center;
             background-size: cover;
             color: white;
@@ -268,7 +273,7 @@
             left: 0;
             width: 80px;
             height: 3px;
-            background: var(--gold);
+            background: var(--accent-blue);
         }
         
         .hero p {
@@ -282,7 +287,7 @@
         .btn {
             display: inline-block;
             padding: 1.2rem 2.5rem;
-            background: var(--gold);
+            background: var(--accent-blue);
             color: white;
             text-decoration: none;
             font-weight: 500;
@@ -293,7 +298,7 @@
             font-size: 0.9rem;
             position: relative;
             overflow: hidden;
-            border: 2px solid var(--gold);
+            border: 2px solid var(--accent-blue);
         }
         
         .btn:before {
@@ -313,9 +318,9 @@
         
         .btn:hover {
             background: transparent;
-            color: var(--gold);
+            color: var(--accent-blue);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(200, 169, 126, 0.3);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
         }
         
         .featured-in {
@@ -359,7 +364,7 @@
         
         .section-header h2 {
             font-size: 3.5rem;
-            color: var(--dark);
+            color: var(--primary-blue);
             margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
@@ -373,14 +378,14 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: var(--gold);
+            background: var(--accent-blue);
         }
         
         .section-header p {
             max-width: 700px;
             margin: 2rem auto 0;
             line-height: 1.8;
-            color: #555;
+            color: #475569;
             font-size: 1.1rem;
         }
         
@@ -399,6 +404,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            border: 1px solid #e2e8f0;
         }
         
         .collection-card:before {
@@ -408,7 +414,7 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: var(--gold);
+            background: var(--accent-blue);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.6s ease;
@@ -425,7 +431,7 @@
         
         .collection-icon {
             font-size: 3rem;
-            color: var(--gold);
+            color: var(--accent-blue);
             margin-bottom: 1.5rem;
             transition: var(--transition);
         }
@@ -437,17 +443,17 @@
         .collection-card h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: var(--dark);
+            color: var(--primary-blue);
         }
         
         .collection-card p {
-            color: #666;
+            color: #475569;
             margin-bottom: 1.5rem;
             font-size: 1rem;
         }
         
         .testimonials {
-            background: var(--dark);
+            background: var(--primary-blue);
             color: var(--light);
             padding: 8rem 10%;
         }
@@ -462,7 +468,7 @@
         .testimonial-card {
             background: rgba(255, 255, 255, 0.05);
             padding: 3rem;
-            border-left: 3px solid var(--gold);
+            border-left: 3px solid var(--accent-blue);
             transition: var(--transition);
             position: relative;
         }
@@ -502,7 +508,7 @@
             border-radius: 50%;
             overflow: hidden;
             margin-right: 1rem;
-            border: 2px solid var(--gold);
+            border: 2px solid var(--accent-blue);
         }
         
         .author-avatar img {
@@ -514,17 +520,17 @@
         .author-info h4 {
             font-size: 1.2rem;
             margin-bottom: 0.2rem;
-            color: var(--gold);
+            color: var(--accent-blue);
         }
         
         .author-info p {
             font-size: 0.9rem;
-            color: #ccc;
+            color: #cbd5e1;
         }
         
         /* Gallery Page */
         #gallery-page {
-            background: linear-gradient(135deg, #f9f7f6 0%, #f0ece9 100%);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
         }
         
         .gallery-container {
@@ -540,7 +546,7 @@
         
         .gallery-header h2 {
             font-size: 3.5rem;
-            color: var(--dark);
+            color: var(--primary-blue);
             margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
@@ -554,75 +560,15 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: var(--gold);
+            background: var(--accent-blue);
         }
         
         .gallery-header p {
             max-width: 600px;
             margin: 2rem auto 0;
             line-height: 1.8;
-            color: #555;
+            color: #475569;
             font-size: 1.1rem;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-        
-        .gallery-item {
-            position: relative;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            cursor: pointer;
-        }
-        
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-            transition: var(--transition);
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-        
-        .gallery-item-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-            padding: 2.5rem 2rem 2rem;
-            color: white;
-            opacity: 0;
-            transition: var(--transition);
-            transform: translateY(20px);
-        }
-        
-        .gallery-item:hover .gallery-item-overlay {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .gallery-item-overlay h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .gallery-item-overlay p {
-            font-size: 1rem;
-            opacity: 0.9;
         }
         
         .gallery-categories {
@@ -636,24 +582,246 @@
         .gallery-category {
             padding: 0.8rem 1.8rem;
             background: white;
-            border: 1px solid #eee;
-            color: #555;
+            border: 1px solid #cbd5e1;
+            color: #475569;
             cursor: pointer;
             transition: var(--transition);
             text-transform: uppercase;
             font-size: 0.9rem;
             letter-spacing: 1px;
+            border-radius: 3px;
         }
         
         .gallery-category.active, .gallery-category:hover {
-            background: var(--gold);
+            background: var(--accent-blue);
             color: white;
-            border-color: var(--gold);
+            border-color: var(--accent-blue);
+        }
+        
+        .collection-section {
+            margin-bottom: 5rem;
+            display: none;
+        }
+        
+        .collection-section.active {
+            display: block;
+        }
+        
+        .collection-title {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-blue);
+            text-align: center;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            background: white;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(30, 58, 138, 0.9);
+            padding: 2rem;
+            color: white;
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .gallery-item-overlay p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 8px;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            background: white;
+        }
+        
+        .product-info h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .product-info p {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        /* Product Modal */
+        .product-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1001;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-blue);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 2;
+            transition: var(--transition);
+        }
+        
+        .modal-close:hover {
+            background: var(--accent-blue);
+        }
+        
+        .modal-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .modal-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .modal-details h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        .modal-details p {
+            color: #475569;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .modal-price {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-features {
+            margin-bottom: 2rem;
+        }
+        
+        .modal-features li {
+            list-style: none;
+            margin-bottom: 0.5rem;
+            color: #475569;
+        }
+        
+        .modal-features i {
+            color: var(--accent-blue);
+            margin-right: 10px;
         }
         
         /* About Page */
         #about-page {
-            background: linear-gradient(135deg, #0a0a0a 0%, #2a2a2a 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: var(--light);
         }
         
@@ -670,7 +838,7 @@
         
         .about-header h2 {
             font-size: 3.5rem;
-            color: var(--gold);
+            color: var(--accent-blue);
             margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
@@ -684,14 +852,14 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: var(--gold);
+            background: var(--accent-blue);
         }
         
         .about-header p {
             max-width: 600px;
             margin: 2rem auto 0;
             line-height: 1.8;
-            color: #d6d6d6;
+            color: #cbd5e1;
             font-size: 1.1rem;
         }
         
@@ -717,7 +885,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(200, 169, 126, 0.2), transparent);
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.2), transparent);
             z-index: 1;
         }
         
@@ -735,13 +903,13 @@
         .about-text h3 {
             font-size: 2.2rem;
             margin-bottom: 2rem;
-            color: var(--gold);
+            color: var(--accent-blue);
         }
         
         .about-text p {
             margin-bottom: 1.5rem;
             line-height: 1.8;
-            color: #d6d6d6;
+            color: #cbd5e1;
             font-size: 1.1rem;
         }
         
@@ -750,12 +918,12 @@
             padding: 4rem;
             border-radius: 5px;
             margin: 4rem 0;
-            border-left: 5px solid var(--gold);
+            border-left: 5px solid var(--accent-blue);
         }
         
         .mission-vision h3 {
             font-size: 2.5rem;
-            color: var(--gold);
+            color: var(--accent-blue);
             margin-bottom: 2rem;
             text-align: center;
         }
@@ -766,7 +934,7 @@
         
         .mission-vision-item h4 {
             font-size: 1.7rem;
-            color: var(--gold);
+            color: var(--accent-blue);
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
@@ -779,7 +947,7 @@
         
         .mission-vision-item p {
             line-height: 1.8;
-            color: #d6d6d6;
+            color: #cbd5e1;
             padding-left: 2.5rem;
             font-size: 1.1rem;
         }
@@ -801,15 +969,15 @@
         }
         
         .stat-item:hover {
-            background: rgba(200, 169, 126, 0.1);
+            background: rgba(59, 130, 246, 0.1);
             transform: translateY(-5px);
-            border-color: var(--gold);
+            border-color: var(--accent-blue);
         }
         
         .stat-number {
             font-size: 3rem;
             font-weight: 700;
-            color: var(--gold);
+            color: var(--accent-blue);
             margin-bottom: 0.5rem;
         }
         
@@ -817,7 +985,7 @@
             font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #d6d6d6;
+            color: #cbd5e1;
         }
         
         .process-section {
@@ -848,7 +1016,7 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: var(--gold);
+            background: var(--accent-blue);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.6s ease;
@@ -859,15 +1027,15 @@
         }
         
         .process-step:hover {
-            background: rgba(200, 169, 126, 0.1);
+            background: rgba(59, 130, 246, 0.1);
             transform: translateY(-5px);
-            border-color: var(--gold);
+            border-color: var(--accent-blue);
         }
         
         .step-number {
             font-size: 3.5rem;
             font-weight: 700;
-            color: var(--gold);
+            color: var(--accent-blue);
             margin-bottom: 1rem;
             opacity: 0.3;
         }
@@ -875,17 +1043,17 @@
         .process-step h4 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--gold);
+            color: var(--accent-blue);
         }
         
         .process-step p {
-            color: #d6d6d6;
+            color: #cbd5e1;
             line-height: 1.6;
         }
         
         /* Contact Page */
         #contact-page {
-            background: linear-gradient(135deg, #f8f5f2 0%, #e6dfd8 100%);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
         }
         
         .contact-container {
@@ -901,7 +1069,7 @@
         
         .contact-header h2 {
             font-size: 3.5rem;
-            color: var(--dark);
+            color: var(--primary-blue);
             margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
@@ -915,14 +1083,14 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: var(--gold);
+            background: var(--accent-blue);
         }
         
         .contact-header p {
             max-width: 600px;
             margin: 2rem auto 0;
             line-height: 1.8;
-            color: #555;
+            color: #475569;
             font-size: 1.1rem;
         }
         
@@ -935,13 +1103,13 @@
         .contact-info h3 {
             font-size: 2rem;
             margin-bottom: 2rem;
-            color: var(--dark);
+            color: var(--primary-blue);
         }
         
         .contact-info p {
             margin-bottom: 2rem;
             line-height: 1.8;
-            color: #555;
+            color: #475569;
             font-size: 1.1rem;
         }
         
@@ -957,7 +1125,7 @@
         
         .contact-details i {
             font-size: 1.2rem;
-            color: var(--gold);
+            color: var(--accent-blue);
             margin-right: 1.5rem;
             width: 20px;
         }
@@ -967,8 +1135,8 @@
             width: 100%;
             padding: 1.2rem;
             margin-bottom: 1.5rem;
-            border: 1px solid #ddd;
-            border-radius: 0;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
             background: white;
@@ -978,8 +1146,8 @@
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 0 2px rgba(200, 169, 126, 0.2);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
         }
         
         .contact-form textarea {
@@ -989,10 +1157,10 @@
         
         .contact-form button {
             padding: 1.2rem 2.5rem;
-            background: var(--gold);
+            background: var(--accent-blue);
             color: white;
             border: none;
-            border-radius: 0;
+            border-radius: 5px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 500;
             letter-spacing: 1.5px;
@@ -1000,14 +1168,14 @@
             transition: var(--transition);
             text-transform: uppercase;
             font-size: 0.9rem;
-            border: 2px solid var(--gold);
+            border: 2px solid var(--accent-blue);
         }
         
         .contact-form button:hover {
             background: transparent;
-            color: var(--gold);
+            color: var(--accent-blue);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(200, 169, 126, 0.3);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
         }
         
         .map-container {
@@ -1023,13 +1191,13 @@
         
         .faq-item {
             margin-bottom: 2rem;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #cbd5e1;
             padding-bottom: 2rem;
         }
         
         .faq-question {
             font-size: 1.3rem;
-            color: var(--dark);
+            color: var(--primary-blue);
             margin-bottom: 1rem;
             cursor: pointer;
             display: flex;
@@ -1039,20 +1207,44 @@
         }
         
         .faq-question:hover {
-            color: var(--gold);
+            color: var(--accent-blue);
         }
         
         .faq-answer {
-            color: #555;
+            color: #475569;
             line-height: 1.8;
             padding-right: 2rem;
             display: none;
         }
         
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-float:hover {
+            background: #128C7E;
+            transform: scale(1.1);
+        }
+        
         /* Footer */
         footer {
-            background: var(--dark);
-            color: #d6d6d6;
+            background: var(--primary-blue);
+            color: #cbd5e1;
             padding: 5rem 2rem 2rem;
             text-align: center;
         }
@@ -1069,19 +1261,19 @@
         .footer-column h3 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            color: var(--gold);
+            color: var(--accent-blue);
         }
         
         .footer-column p, .footer-column a {
             margin-bottom: 1rem;
             display: block;
-            color: #d6d6d6;
+            color: #cbd5e1;
             text-decoration: none;
             transition: var(--transition);
         }
         
         .footer-column a:hover {
-            color: var(--gold);
+            color: var(--accent-blue);
             padding-left: 5px;
         }
         
@@ -1098,13 +1290,13 @@
             width: 45px;
             height: 45px;
             border-radius: 50%;
-            background: #3a3a3a;
-            color: #d6d6d6;
+            background: #334155;
+            color: #cbd5e1;
             transition: var(--transition);
         }
         
         .social-links a:hover {
-            background: var(--gold);
+            background: var(--accent-blue);
             color: white;
             transform: translateY(-5px);
         }
@@ -1112,9 +1304,9 @@
         .copyright {
             margin-top: 5rem;
             padding-top: 2rem;
-            border-top: 1px solid #3a3a3a;
+            border-top: 1px solid #334155;
             font-size: 0.9rem;
-            color: #999;
+            color: #94a3b8;
         }
         
         /* Responsive Design */
@@ -1123,7 +1315,7 @@
                 font-size: 3.5rem;
             }
             
-            .about-content, .contact-content {
+            .about-content, .contact-content, .modal-body {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
@@ -1221,6 +1413,14 @@
             .faq-answer {
                 padding-right: 0;
             }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -1278,6 +1478,37 @@
         </ul>
     </div>
 
+    <!-- Product Modal -->
+    <div class="product-modal">
+        <div class="modal-content">
+            <div class="modal-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-image" src="" alt="Product Image">
+                </div>
+                <div class="modal-details">
+                    <h3 id="modal-title">Product Name</h3>
+                    <p id="modal-description">Product description goes here.</p>
+                    <div class="modal-price" id="modal-price">$199.99</div>
+                    <ul class="modal-features" id="modal-features">
+                        <!-- Features will be added dynamically -->
+                    </ul>
+                    <a href="#" class="whatsapp-btn" id="modal-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/233200635642?text=Hello%20Navis%20Signature!%20I'm%20interested%20in%20your%20products." 
+       class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Home Page -->
     <section id="home-page" class="page active">
         <div class="hero">
@@ -1303,16 +1534,34 @@
         <div class="home-section">
             <div class="section-header">
                 <h2>Our Collections</h2>
-                <p>Explore our exclusive range of handcrafted footwear, each collection telling a unique story of style, comfort, and unparalleled craftsmanship.</p>
+                <p>Explore our exclusive range of handcrafted footwear and accessories, each collection telling a unique story of style, comfort, and unparalleled craftsmanship.</p>
             </div>
             
             <div class="collections-grid">
                 <div class="collection-card">
                     <div class="collection-icon">
-                        <i class="fas fa-crown"></i>
+                        <i class="fas fa-shoe-prints"></i>
                     </div>
-                    <h3>Heritage Collection</h3>
+                    <h3>Premium Shoes</h3>
                     <p>Timeless designs that pay homage to traditional shoemaking techniques with a modern sensibility.</p>
+                    <a href="#gallery" class="btn" data-page="gallery" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">View Collection</a>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-icon">
+                        <i class="fas fa-sandal"></i>
+                    </div>
+                    <h3>Elegant Sandals</h3>
+                    <p>Comfortable and stylish sandals perfect for both casual and formal occasions.</p>
+                    <a href="#gallery" class="btn" data-page="gallery" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">View Collection</a>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-icon">
+                        <i class="fas fa-socks"></i>
+                    </div>
+                    <h3>Palms Slippers</h3>
+                    <p>Lightweight and comfortable slippers made with premium materials for ultimate relaxation.</p>
                     <a href="#gallery" class="btn" data-page="gallery" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">View Collection</a>
                 </div>
                 
@@ -1320,17 +1569,8 @@
                     <div class="collection-icon">
                         <i class="fas fa-gem"></i>
                     </div>
-                    <h3>Limited Editions</h3>
-                    <p>Exclusive designs produced in limited quantities for the discerning collector of fine footwear.</p>
-                    <a href="#gallery" class="btn" data-page="gallery" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">View Collection</a>
-                </div>
-                
-                <div class="collection-card">
-                    <div class="collection-icon">
-                        <i class="fas fa-feather"></i>
-                    </div>
-                    <h3>Modern Essentials</h3>
-                    <p>Contemporary designs that blend comfort with style for the modern lifestyle.</p>
+                    <h3>Designer Belts</h3>
+                    <p>Exquisite belts that complement your style while providing durability and elegance.</p>
                     <a href="#gallery" class="btn" data-page="gallery" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">View Collection</a>
                 </div>
             </div>
@@ -1345,14 +1585,13 @@
             
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"I've been wearing Navis Signature shoes for some days , and nothing else compares. The craftsmanship is exceptional, and they only get better with age."</p>
+                    <p class="testimonial-text">"I've been wearing Navis Signature shoes for some days, and nothing else compares. The craftsmanship is exceptional, and they only get better with age."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
                             <!-- <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="James Wilson"> -->
                         </div>
                         <div class="author-info">
                             <h4>Chisom Nmaemeka</h4>
-                            <!-- <p>Business Executive</p> -->
                         </div>
                     </div>
                 </div>
@@ -1365,20 +1604,18 @@
                         </div>
                         <div class="author-info">
                             <h4>Akinrinlola Mayowa</h4>
-                            <!-- <p>Fashion Editor</p> -->
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"As a someone who enjoys wearingfine footwear, I can confidently say that Navis Signature represents the pinnacle of artisan shoemaking. Their limited editions are particularly exquisite."</p>
+                    <p class="testimonial-text">"As someone who enjoys wearing fine footwear, I can confidently say that Navis Signature represents the pinnacle of artisan shoemaking. Their limited editions are particularly exquisite."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
                             <!-- <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Michael Chen"> -->
                         </div>
                         <div class="author-info">
                             <h4>David Obi</h4>
-                            <!-- <p>Art Collector</p> -->
                         </div>
                     </div>
                 </div>
@@ -1391,143 +1628,249 @@
         <div class="gallery-container">
             <div class="gallery-header">
                 <h2>Our Collection</h2>
-                <p>Discover the artistry and craftsmanship behind each pair of Navis Signature shoes. From classic designs to contemporary masterpieces, each pair is a testament to our dedication to excellence.</p>
+                <p>Discover the artistry and craftsmanship behind each Navis Signature product. From shoes to accessories, each item is a testament to our dedication to excellence.</p>
             </div>
             
             <div class="gallery-categories">
-                <div class="gallery-category active">All Collections</div>
-                <!-- <div class="gallery-category">Classic Series</div>
-                <div class="gallery-category">Modern Collection</div>
-                <div class="gallery-category">Limited Edition</div>
-                <div class="gallery-category">Bespoke Designs</div> -->
+                <div class="gallery-category active" data-category="all">All Collections</div>
+                <div class="gallery-category" data-category="shoes">Shoes</div>
+                <div class="gallery-category" data-category="sandals">Sandals</div>
+                <div class="gallery-category" data-category="slippers">Palms Slippers</div>
+                <div class="gallery-category" data-category="belts">Belts</div>
             </div>
             
-            <div class="gallery-grid">
-                <!-- Using the image names from your file list -->
-                <div class="gallery-item">
-                    <img src="images/image1.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Classic Oxford</h3>
-                        <p>Timeless elegance | Hand-stitched leather</p>
+            <!-- Shoes Collection -->
+            <div class="collection-section active" id="shoes-section">
+                <h3 class="collection-title">Premium Shoes Collection</h3>
+                <div class="gallery-grid">
+                    <!-- Shoes images (image1 - image10) -->
+                    <div class="gallery-item" data-category="shoes" data-product="1">
+                        <img src="images/image1.jpg" alt="Classic Oxford Shoes">
+                        <div class="product-info">
+                            <h4>Classic Oxford</h4>
+                            <p>Timeless elegance with hand-stitched leather</p>
+                            <div class="price">$249.99</div>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Classic Oxford</h3>
+                            <p>Premium leather | Handcrafted | Formal wear</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="1">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="2">
+                        <img src="images/image2.jpg" alt="Modern Loafers">
+                        <div class="product-info">
+                            <h4>Modern Loafers</h4>
+                            <p>Contemporary comfort with premium suede</p>
+                            <div class="price">$219.99</div>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Modern Loafers</h3>
+                            <p>Premium suede | Casual elegance | Slip-on design</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="2">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="3">
+                        <img src="images/image3.jpg" alt="Artisan Boots">
+                        <div class="product-info">
+                            <h4>Artisan Boots</h4>
+                            <p>Rugged sophistication with weather-resistant finish</p>
+                            <div class="price">$279.99</div>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Artisan Boots</h3>
+                            <p>Weather-resistant | Durable | All-season wear</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="3">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="4">
+                        <img src="images/image4.jpg" alt="Evening Formal Shoes">
+                        <div class="product-info">
+                            <h4>Evening Formal</h4>
+                            <p>Black tie excellence with patent leather</p>
+                            <div class="price">$259.99</div>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Evening Formal</h3>
+                            <p>Patent leather | Formal events | Special occasions</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="4">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="5">
+                        <img src="images/image5.jpg" alt="Casual Elegance Shoes">
+                        <div class="product-info">
+                            <h4>Casual Elegance</h4>
+                            <p>Relaxed refinement with Italian calfskin</p>
+                            <div class="price">$229.99</div>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Casual Elegance</h3>
+                            <p>Italian calfskin | Everyday comfort | Versatile style</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="5">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="6">
+                        <img src="images/image7.jpg" alt="Heritage Wingtip Shoes">
+                        <div class="product-info">
+                            <h4>Heritage Wingtip</h4>
+                            <p>Classic broguing with antiqued finish</p>
+                            <div class="price">$269.99</div>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Heritage Wingtip</h3>
+                            <p>Classic broguing | Antiqued finish | Timeless design</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="6">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="7">
+                        <img src="images/image9.jpg" alt="Chelsea Boots">
+                        <div class="product-info">
+                            <h4>Chelsea Boots</h4>
+                            <p>Modern classic with elastic side panels</p>
+                            <div class="price">$239.99</div>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Chelsea Boots</h3>
+                            <p>Elastic side panels | Easy wear | Modern classic</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="7">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/image2.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Modern Loafers</h3>
-                        <p>Contemporary comfort | Premium suede</p>
+            </div>
+            
+            <!-- Sandals Collection -->
+            <div class="collection-section" id="sandals-section">
+                <h3 class="collection-title">Elegant Sandals Collection</h3>
+                <div class="gallery-grid">
+                    <!-- Sandals images -->
+                    <div class="gallery-item" data-category="sandals" data-product="8">
+                        <img src="images/image10.jpg" alt="Designer Sandals">
+                        <div class="product-info">
+                            <h4>Designer Sandals</h4>
+                            <p>Sophisticated design with premium leather</p>
+                            <div class="price">$149.99</div>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Sandals</h3>
+                            <p>Premium leather | Summer wear | Casual elegance</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="8">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="sandals" data-product="9">
+                        <img src="images/image12.jpg" alt="Comfort Sandals">
+                        <div class="product-info">
+                            <h4>Comfort Sandals</h4>
+                            <p>Ultimate comfort with ergonomic design</p>
+                            <div class="price">$129.99</div>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Comfort Sandals</h3>
+                            <p>Ergonomic design | All-day comfort | Lightweight</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="9">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/image3.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Artisan Boots</h3>
-                        <p>Rugged sophistication | Weather-resistant</p>
+            </div>
+            
+            <!-- Slippers Collection -->
+            <div class="collection-section" id="slippers-section">
+                <h3 class="collection-title">Palms Slippers Collection</h3>
+                <div class="gallery-grid">
+                    <!-- Slippers images -->
+                    <div class="gallery-item" data-category="slippers" data-product="10">
+                        <img src="images/image13.jpg" alt="Premium Slippers">
+                        <div class="product-info">
+                            <h4>Premium Slippers</h4>
+                            <p>Luxury comfort with soft fabric lining</p>
+                            <div class="price">$89.99</div>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Premium Slippers</h3>
+                            <p>Soft fabric lining | Indoor comfort | Relaxation</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="10">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="slippers" data-product="11">
+                        <img src="images/image14.jpg" alt="Casual Slippers">
+                        <div class="product-info">
+                            <h4>Casual Slippers</h4>
+                            <p>Everyday comfort with durable sole</p>
+                            <div class="price">$79.99</div>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Casual Slippers</h3>
+                            <p>Durable sole | Quick wear | Home comfort</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="11">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/image4.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Evening Formal</h3>
-                        <p>Black tie excellence | Patent leather</p>
+            </div>
+            
+            <!-- Belts Collection -->
+            <div class="collection-section" id="belts-section">
+                <h3 class="collection-title">Designer Belts Collection</h3>
+                <div class="gallery-grid">
+                    <!-- Belts images -->
+                    <div class="gallery-item" data-category="belts" data-product="12">
+                        <img src="images/image15.jpg" alt="Leather Belt">
+                        <div class="product-info">
+                            <h4>Leather Belt</h4>
+                            <p>Genuine leather with polished buckle</p>
+                            <div class="price">$69.99</div>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Leather Belt</h3>
+                            <p>Genuine leather | Polished buckle | Formal wear</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="12">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image5.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Casual Elegance</h3>
-                        <p>Relaxed refinement | Italian calfskin</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image6.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Limited Edition</h3>
-                        <p>Exclusive designs | Numbered series</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image7.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Heritage Wingtip</h3>
-                        <p>Classic broguing | Antiqued finish</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image8.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Driver Moccasins</h3>
-                        <p>Casual luxury | Flexible sole</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image9.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Chelsea Boots</h3>
-                        <p>Modern classic | Elastic side panels</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image10.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Monk Strap</h3>
-                        <p>Sophisticated design | Buckle detail</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image11.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Double Monk</h3>
-                        <p>Contemporary classic | Dual buckle</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image12.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Penny Loafers</h3>
-                        <p>Timeless style | Slip-on comfort</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image13.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Tassel Loafers</h3>
-                        <p>Elegant detailing | Premium leather</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image14.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Cap Toe Derby</h3>
-                        <p>Classic design | Versatile style</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image15.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Whole Cut Oxford</h3>
-                        <p>Minimalist elegance | Single piece construction</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image16.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Brogue Boots</h3>
-                        <p>Detailed craftsmanship | All-weather performance</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image17.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Desert Boots</h3>
-                        <p>Casual comfort | Suede construction</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image18.jpg" alt="Navis Signature Footwear">
-                    <div class="gallery-item-overlay">
-                        <h3>Formal Opera</h3>
-                        <p>Black tie elegance | Patent finish</p>
+                    
+                    <div class="gallery-item" data-category="belts" data-product="13">
+                        <img src="images/image16.jpg" alt="Designer Belt">
+                        <div class="product-info">
+                            <h4>Designer Belt</h4>
+                            <p>Exquisite design with premium finish</p>
+                            <div class="price">$89.99</div>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Belt</h3>
+                            <p>Premium finish | Unique design | Statement piece</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="13">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1539,7 +1882,7 @@
         <div class="about-container">
             <div class="about-header">
                 <h2>Our Story</h2>
-                <p>For over Eight years, the Navis Signature name has been synonymous with uncompromising quality and artisanal excellence in footwear craftsmanship.</p>
+                <p>For over eight years, the Navis Signature name has been synonymous with uncompromising quality and artisanal excellence in footwear craftsmanship.</p>
             </div>
             <div class="about-content">
                 <div class="about-image">
@@ -1547,8 +1890,8 @@
                 </div>
                 <div class="about-text">
                     <h3>Where Tradition Meets Innovation</h3>
-                    <p>Founded in 2018 by master craftsman Marvellous, our workshop began as an operation in the heart of africa. Today, while we've grown in reputation and reach, we remain committed to the principles that defined us from the beginning.</p>
-                    <p>Each pair of Navis Signature shoes represents over 10 - 12hours of meticulous handwork, utilizing techniques passed down through generations while incorporating modern advancements in comfort and sustainability.</p>
+                    <p>Founded in 2018 by master craftsman Marvellous, our workshop began as an operation in the heart of Africa. Today, while we've grown in reputation and reach, we remain committed to the principles that defined us from the beginning.</p>
+                    <p>Each pair of Navis Signature shoes represents over 10-12 hours of meticulous handwork, utilizing techniques passed down through generations while incorporating modern advancements in comfort and sustainability.</p>
                     <p>We source only the finest materials from ethical suppliers around the world, ensuring that every component meets our exacting standards for quality, durability, and aesthetic appeal.</p>
                     
                     <div class="craftsmanship-stats">
@@ -1557,7 +1900,7 @@
                             <div class="stat-text">Years of Excellence</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">10 - 12</div>
+                            <div class="stat-number">10-12</div>
                             <div class="stat-text">Hours per Pair</div>
                         </div>
                         <div class="stat-item">
@@ -1574,22 +1917,12 @@
                 
                 <div class="mission-vision-item">
                     <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
-                    <p>Our mission is to empower Africans and individuals globally by creating sustainable job opportunities and platforms for growth. Through innovation, ethical manufacturing, and sustainable practices,
-                         we are committed to developing talent, empowering youth, and helping people discover and fulfill their God-given purpose while taking 
-                        African-made leather footwear to the world..</p>
+                    <p>Our mission is to empower Africans and individuals globally by creating sustainable job opportunities and platforms for growth. Through innovation, ethical manufacturing, and sustainable practices, we are committed to developing talent, empowering youth, and helping people discover and fulfill their God-given purpose while taking African-made leather footwear to the world.</p>
                 </div>
                 
                 <div class="mission-vision-item">
                     <h4><i class="fas fa-eye"></i> Our Vision</h4>
-                    <p>To establish a world-class manufacturing environment dedicated to producing premium, comfortable, and durable leather footwear for adults, teenagers, and children. 
-                        Our vision is to ensure that every household in Africa and ultimately across the globe proudly wears Navis footwear for all occasions.
-                        Over the next 10 years,
-                     Navis Signatures aims to grow from Accra to every continent, becoming a globally recognized symbol of African excellence, craftsmanship, and heritage in leather footwear.
-                     <br><br>
-
-                     Our 10-Year Vision <br>
-From Accra to every continent, Navis Signatures will lead Africa’s leather footwear industry creating jobs, empowering youth, celebrating African heritage, and delivering world-class footwear through sustainable practices.
-                    </p>
+                    <p>To establish a world-class manufacturing environment dedicated to producing premium, comfortable, and durable leather footwear for adults, teenagers, and children. Our vision is to ensure that every household in Africa and ultimately across the globe proudly wears Navis footwear for all occasions. Over the next 10 years, Navis Signatures aims to grow from Accra to every continent, becoming a globally recognized symbol of African excellence, craftsmanship, and heritage in leather footwear.</p>
                 </div>
             </div>
 
@@ -1597,7 +1930,7 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
             <div class="process-section">
                 <div class="section-header">
                     <h2>Our Craftsmanship Process</h2>
-                    <p>Every pair of Navis Signature shoes undergoes a meticulous creation process that blends time-honored techniques with innovative approaches.</p>
+                    <p>Every Navis Signature product undergoes a meticulous creation process that blends time-honored techniques with innovative approaches.</p>
                 </div>
                 
                 <div class="process-steps">
@@ -1610,7 +1943,7 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
                     <div class="process-step">
                         <div class="step-number">02</div>
                         <h4>Pattern Cutting</h4>
-                        <p>Each design is carefully patterned by hand, paying meticulous attention to grain direction and leather characteristics.</p>
+                        <p>Each design is carefully patterned by hand, paying meticulous attention to grain direction and material characteristics.</p>
                     </div>
                     
                     <div class="process-step">
@@ -1621,20 +1954,20 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
                     
                     <div class="process-step">
                         <div class="step-number">04</div>
-                        <h4>Lasting & Soling</h4>
-                        <p>The upper is carefully stretched over a last and attached to the sole using techniques that ensure perfect fit and comfort.</p>
+                        <h4>Assembly</h4>
+                        <p>All components are carefully assembled using techniques that ensure perfect fit, comfort, and longevity.</p>
                     </div>
                     
                     <div class="process-step">
                         <div class="step-number">05</div>
                         <h4>Finishing</h4>
-                        <p>Each shoe undergoes multiple stages of polishing and finishing to achieve the distinctive Navis Signature appearance.</p>
+                        <p>Each product undergoes multiple stages of polishing and finishing to achieve the distinctive Navis Signature appearance.</p>
                     </div>
                     
                     <div class="process-step">
                         <div class="step-number">06</div>
                         <h4>Quality Assurance</h4>
-                        <p>Every pair is rigorously inspected to ensure it meets our exacting standards before being prepared for delivery.</p>
+                        <p>Every item is rigorously inspected to ensure it meets our exacting standards before being prepared for delivery.</p>
                     </div>
                 </div>
             </div>
@@ -1701,8 +2034,7 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            Each pair of Navis Signature shoes requires between 2-4 weeks to complete, depending on the complexity of the design and materials. 
-                            as it involves multiple fittings and custom last creation.
+                            Each pair of Navis Signature shoes requires between 10-12 hours to complete, depending on the complexity of the design and materials. Bespoke orders may take 2-4 weeks as they involve multiple fittings and custom creation.
                         </div>
                     </div>
                     
@@ -1718,21 +2050,21 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
                     
                     <div class="faq-item">
                         <div class="faq-question">
-                            What makes Navis Signature shoes different from other luxury brands?
+                            What makes Navis Signature products different from other luxury brands?
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            Our shoes are entirely handcrafted by master artisans using traditional techniques that have been refined over generations. We use only the finest materials, and each pair undergoes rigorous quality control. Unlike many luxury brands, we maintain complete control over our production process from start to finish.
+                            Our products are entirely handcrafted by master artisans using traditional techniques that have been refined over generations. We use only the finest materials, and each item undergoes rigorous quality control. Unlike many luxury brands, we maintain complete control over our production process from start to finish.
                         </div>
                     </div>
                     
                     <div class="faq-item">
                         <div class="faq-question">
-                            How should I care for my Navis Signature shoes?
+                            How should I care for my Navis Signature products?
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            We recommend using high-quality shoe trees when not wearing your shoes. Clean them regularly with a soft brush or cloth, and use conditioners and polishes appropriate for the specific leather. Avoid wearing the same pair consecutive days to allow them to air properly. We offer a complimentary care guide with every purchase.
+                            We recommend using proper storage methods when not using your products. Clean them regularly with a soft brush or cloth, and use conditioners appropriate for the specific material. We offer a complimentary care guide with every purchase.
                         </div>
                     </div>
                     
@@ -1742,7 +2074,7 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            Yes, we provide a comprehensive repair and refurbishment service for all Navis Signature shoes. This includes sole replacement, heel repair, reconditioning, and more. We strive to extend the life of your investment pieces for many years to come.
+                            Yes, we provide a comprehensive repair and refurbishment service for all Navis Signature products. This includes sole replacement, restitching, reconditioning, and more. We strive to extend the life of your investment pieces for many years to come.
                         </div>
                     </div>
                 </div>
@@ -1755,7 +2087,7 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
         <div class="footer-content">
             <div class="footer-column">
                 <h3>Navis Signature</h3>
-                <p>Creating exceptional footwear through traditional craftsmanship and innovative design since 2018.</p>
+                <p>Creating exceptional footwear and accessories through traditional craftsmanship and innovative design since 2018.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-pinterest"></i></a>
@@ -1765,12 +2097,10 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
             </div>
             <div class="footer-column">
                 <h3>Explore</h3>
-                <a href="#gallery" data-page="gallery">Collections</a>
-                <!-- <a href="#about" data-page="about">Bespoke Services</a>
-                <a href="#about" data-page="about">Craftsmanship</a>
-                <a href="#about" data-page="about">Sustainability</a>
-                <a href="#gallery" data-page="gallery">New Arrivals</a>
-                <a href="#gallery" data-page="gallery">Limited Editions</a> -->
+                <a href="#gallery" data-page="gallery">Shoes Collection</a>
+                <a href="#gallery" data-page="gallery">Sandals Collection</a>
+                <a href="#gallery" data-page="gallery">Slippers Collection</a>
+                <a href="#gallery" data-page="gallery">Belts Collection</a>
             </div>
             <div class="footer-column">
                 <h3>Support</h3>
@@ -1785,23 +2115,195 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
                 <h3>Newsletter</h3>
                 <p>Subscribe to receive updates on new collections and exclusive events.</p>
                 <form>
-                    <input type="email" placeholder="Your email address" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: none; border-radius: 0;">
-                    <button type="submit" style="padding: 0.8rem 1.5rem; background: var(--gold); color: white; border: none; border-radius: 0; cursor: pointer; width: 100%;">Subscribe</button>
+                    <input type="email" placeholder="Your email address" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: none; border-radius: 5px;">
+                    <button type="submit" style="padding: 0.8rem 1.5rem; background: var(--accent-blue); color: white; border: none; border-radius: 5px; cursor: pointer; width: 100%;">Subscribe</button>
                 </form>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 Navis Signature. All rights reserved. Crafted with passion in africa.</p>
+            <p>&copy; 2025 Navis Signature. All rights reserved. Crafted with passion in Africa.</p>
         </div>
     </footer>
 
     <script>
-        // Navigation and Page Switching
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-links a, .btn[data-page], .footer-column a[data-page], .mobile-nav-links a');
             const pages = document.querySelectorAll('.page');
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const mobileNav = document.querySelector('.mobile-nav');
+            
+            // Product data for modal
+            const products = {
+                1: {
+                    title: "Classic Oxford",
+                    description: "Experience timeless elegance with our Classic Oxford shoes. Handcrafted from premium leather using traditional techniques, these shoes offer unparalleled comfort and style for formal occasions.",
+                    price: "$249.99",
+                    image: "images/image1.jpg",
+                    features: [
+                        "Premium full-grain leather",
+                        "Hand-stitched construction",
+                        "Leather sole with rubber inserts",
+                        "Cork footbed for comfort",
+                        "Available in black and brown"
+                    ]
+                },
+                2: {
+                    title: "Modern Loafers",
+                    description: "Contemporary comfort meets classic style in our Modern Loafers. Made from premium suede with a flexible sole, these shoes are perfect for both casual and business casual settings.",
+                    price: "$219.99",
+                    image: "images/image2.jpg",
+                    features: [
+                        "Premium suede upper",
+                        "Flexible rubber sole",
+                        "Memory foam insole",
+                        "Slip-on design",
+                        "Available in multiple colors"
+                    ]
+                },
+                3: {
+                    title: "Artisan Boots",
+                    description: "Rugged sophistication defined. Our Artisan Boots feature weather-resistant leather and durable construction, making them perfect for all seasons and occasions.",
+                    price: "$279.99",
+                    image: "images/image3.jpg",
+                    features: [
+                        "Weather-resistant leather",
+                        "Goodyear welt construction",
+                        "Vibram® rubber sole",
+                        "Water-resistant finish",
+                        "Ankle support design"
+                    ]
+                },
+                4: {
+                    title: "Evening Formal",
+                    description: "Make a statement at black-tie events with our Evening Formal shoes. Featuring patent leather and a sleek design, these shoes exude sophistication and class.",
+                    price: "$259.99",
+                    image: "images/image4.jpg",
+                    features: [
+                        "High-gloss patent leather",
+                        "Leather sole with grip",
+                        "Slim silhouette design",
+                        "Formal occasion ready",
+                        "Easy maintenance finish"
+                    ]
+                },
+                5: {
+                    title: "Casual Elegance",
+                    description: "Relaxed refinement for everyday wear. These shoes combine Italian calfskin comfort with versatile styling that works from office to evening outings.",
+                    price: "$229.99",
+                    image: "images/image5.jpg",
+                    features: [
+                        "Italian calfskin leather",
+                        "Cushioned footbed",
+                        "Versatile design",
+                        "Breathable lining",
+                        "All-day comfort"
+                    ]
+                },
+                6: {
+                    title: "Heritage Wingtip",
+                    description: "A nod to traditional shoemaking with modern comfort. The Heritage Wingtip features classic broguing and an antiqued finish for a distinguished look.",
+                    price: "$269.99",
+                    image: "images/image7.jpg",
+                    features: [
+                        "Classic brogue detailing",
+                        "Antiqued leather finish",
+                        "Leather insole and outsole",
+                        "Timeless design",
+                        "Hand-polished finish"
+                    ]
+                },
+                7: {
+                    title: "Chelsea Boots",
+                    description: "The modern classic reinvented. Our Chelsea Boots feature elastic side panels for easy wear and a sleek silhouette that pairs with everything.",
+                    price: "$239.99",
+                    image: "images/image9.jpg",
+                    features: [
+                        "Elastic side panels",
+                        "Pull tab for easy wear",
+                        "Leather and rubber sole",
+                        "Sleek silhouette",
+                        "Versatile styling"
+                    ]
+                },
+                8: {
+                    title: "Designer Sandals",
+                    description: "Sophisticated sandals perfect for summer elegance. Made with premium leather and featuring a comfortable footbed for all-day wear.",
+                    price: "$149.99",
+                    image: "images/image10.jpg",
+                    features: [
+                        "Premium leather straps",
+                        "Cushioned footbed",
+                        "Adjustable fit",
+                        "Lightweight design",
+                        "Summer ready"
+                    ]
+                },
+                9: {
+                    title: "Comfort Sandals",
+                    description: "Ultimate comfort meets style. These ergonomic sandals are perfect for casual wear, vacations, or relaxing weekends.",
+                    price: "$129.99",
+                    image: "images/image12.jpg",
+                    features: [
+                        "Ergonomic footbed design",
+                        "Adjustable straps",
+                        "Lightweight construction",
+                        "Arch support",
+                        "Quick-dry materials"
+                    ]
+                },
+                10: {
+                    title: "Premium Slippers",
+                    description: "Luxury comfort for your home. Our Premium Slippers feature soft fabric lining and a comfortable sole for ultimate relaxation.",
+                    price: "$89.99",
+                    image: "images/image13.jpg",
+                    features: [
+                        "Soft fabric lining",
+                        "Memory foam insole",
+                        "Non-slip sole",
+                        "Easy slip-on design",
+                        "Machine washable"
+                    ]
+                },
+                11: {
+                    title: "Casual Slippers",
+                    description: "Everyday comfort with durable construction. Perfect for quick wear around the house or for quick errands.",
+                    price: "$79.99",
+                    image: "images/image14.jpg",
+                    features: [
+                        "Durable rubber sole",
+                        "Breathable upper",
+                        "Quick wear design",
+                        "Lightweight",
+                        "Easy to clean"
+                    ]
+                },
+                12: {
+                    title: "Leather Belt",
+                    description: "Complete your look with our genuine leather belt. Featuring a polished buckle and durable construction for everyday wear.",
+                    price: "$69.99",
+                    image: "images/image15.jpg",
+                    features: [
+                        "Genuine leather",
+                        "Polished metal buckle",
+                        "Multiple size options",
+                        "Formal and casual wear",
+                        "Durable construction"
+                    ]
+                },
+                13: {
+                    title: "Designer Belt",
+                    description: "Make a statement with our Designer Belt. Featuring exquisite detailing and premium finish, this belt adds sophistication to any outfit.",
+                    price: "$89.99",
+                    image: "images/image16.jpg",
+                    features: [
+                        "Premium leather finish",
+                        "Unique buckle design",
+                        "Statement piece",
+                        "Hand-finished edges",
+                        "Luxury packaging"
+                    ]
+                }
+            };
             
             // Function to switch pages
             function switchPage(pageId) {
@@ -1810,7 +2312,6 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
                 });
                 document.getElementById(pageId + '-page').classList.add('active');
                 
-                // Update active class on nav links
                 navLinks.forEach(link => {
                     if (link.getAttribute('data-page') === pageId) {
                         link.classList.add('active');
@@ -1819,13 +2320,9 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
                     }
                 });
                 
-                // Update URL hash
                 window.location.hash = pageId;
-                
-                // Scroll to top
                 window.scrollTo(0, 0);
                 
-                // Close mobile menu if open
                 mobileMenuToggle.classList.remove('active');
                 mobileNav.classList.remove('active');
             }
@@ -1870,10 +2367,25 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
             
             // Gallery category selection
             const galleryCategories = document.querySelectorAll('.gallery-category');
+            const collectionSections = document.querySelectorAll('.collection-section');
+            
             galleryCategories.forEach(category => {
                 category.addEventListener('click', function() {
+                    const categoryId = this.getAttribute('data-category');
+                    
                     galleryCategories.forEach(cat => cat.classList.remove('active'));
                     this.classList.add('active');
+                    
+                    if (categoryId === 'all') {
+                        collectionSections.forEach(section => {
+                            section.classList.add('active');
+                        });
+                    } else {
+                        collectionSections.forEach(section => {
+                            section.classList.remove('active');
+                        });
+                        document.getElementById(categoryId + '-section').classList.add('active');
+                    }
                 });
             });
             
@@ -1896,7 +2408,73 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
                 });
             });
             
-            // Add subtle animations to elements on scroll
+            // Modal functionality
+            const modal = document.querySelector('.product-modal');
+            const modalClose = document.querySelector('.modal-close');
+            const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
+            
+            viewDetailsBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const productId = this.getAttribute('data-product');
+                    const product = products[productId];
+                    
+                    if (product) {
+                        document.getElementById('modal-title').textContent = product.title;
+                        document.getElementById('modal-description').textContent = product.description;
+                        document.getElementById('modal-price').textContent = product.price;
+                        document.getElementById('modal-image').src = product.image;
+                        document.getElementById('modal-image').alt = product.title;
+                        
+                        const featuresList = document.getElementById('modal-features');
+                        featuresList.innerHTML = '';
+                        product.features.forEach(feature => {
+                            const li = document.createElement('li');
+                            li.innerHTML = `<i class="fas fa-check"></i> ${feature}`;
+                            featuresList.appendChild(li);
+                        });
+                        
+                        // Update WhatsApp link
+                        const whatsappLink = document.getElementById('modal-whatsapp');
+                        const message = `Hello Navis Signature!%0A%0AI would like to order:%0A*Product:* ${product.title}%0A*Price:* ${product.price}%0A*Image:* ${window.location.origin}/${product.image}%0A%0APlease provide me with more details about availability and ordering.`;
+                        whatsappLink.href = `https://wa.me/233200635642?text=${message}`;
+                        
+                        modal.style.display = 'flex';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+            
+            // Close modal
+            modalClose.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Direct WhatsApp order from gallery items
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    if (!e.target.classList.contains('view-details-btn')) {
+                        const productId = this.getAttribute('data-product');
+                        const product = products[productId];
+                        
+                        if (product) {
+                            const message = `Hello Navis Signature!%0A%0AI'm interested in this product:%0A*Product:* ${product.title}%0A*Price:* ${product.price}%0A%0ACan you please provide more information?`;
+                            window.open(`https://wa.me/233200635642?text=${message}`, '_blank');
+                        }
+                    }
+                });
+            });
+            
+            // Add subtle animations
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
@@ -1911,43 +2489,12 @@ From Accra to every continent, Navis Signatures will lead Africa’s leather foo
                 });
             }, observerOptions);
             
-            // Observe elements for animation
             document.querySelectorAll('.collection-card, .testimonial-card, .gallery-item, .process-step, .stat-item').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(20px)';
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(el);
             });
-            
-            // WhatsApp Order Links Functionality
-            function setupWhatsAppOrderLinks() {
-                const galleryItems = document.querySelectorAll('.gallery-item');
-                
-                galleryItems.forEach(item => {
-                    const img = item.querySelector('img');
-                    const title = item.querySelector('.gallery-item-overlay h3')?.textContent || 'Navis Signature Footwear';
-                    const description = item.querySelector('.gallery-item-overlay p')?.textContent || 'Premium Handcrafted Footwear';
-                    const imgSrc = img.src;
-                    
-                    // Make the entire gallery item clickable
-                    item.style.cursor = 'pointer';
-                    
-                    item.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        
-                        // Create WhatsApp message with product details
-                        const phoneNumber = '233200635642'; // Ghana number
-                        const message = `Hello Navis Signature!%0A%0AI would like to order this item:%0A%0A*Product:* ${title}%0A*Description:* ${description}%0A*Image:* ${imgSrc}%0A%0APlease provide me with more details about availability, pricing, and sizing options.`;
-                        
-                        // Open WhatsApp with the message
-                        const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-                        window.open(whatsappURL, '_blank');
-                    });
-                });
-            }
-            
-            // Initialize WhatsApp order links
-            setupWhatsAppOrderLinks();
         });
     </script>
 </body>
