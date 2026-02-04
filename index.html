@@ -3502,253 +3502,285 @@
             
             // Function to switch pages
             function switchPage(pageId) {
-                pages.forEach(page => {
-                    page.classList.remove('active');
-                });
-                document.getElementById(pageId + '-page').classList.add('active');
-                
-                navLinks.forEach(link => {
-                    if (link.getAttribute('data-page') === pageId) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-                
-                window.location.hash = pageId;
-                window.scrollTo(0, 0);
-                
-                mobileMenuToggle.classList.remove('active');
-                mobileNav.classList.remove('active');
-            }
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId + '-page').classList.add('active');
             
-            // Add click event to nav links
             navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const pageId = this.getAttribute('data-page');
-                    switchPage(pageId);
-                });
-            });
-            
-            // Mobile menu toggle
-            mobileMenuToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-                mobileNav.classList.toggle('active');
-            });
-            
-            // Close mobile menu when clicking on a link
-            document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenuToggle.classList.remove('active');
-                    mobileNav.classList.remove('active');
-                });
-            });
-            
-            // Check URL hash on load
-            function checkHash() {
-                const hash = window.location.hash.substring(1);
-                if (hash && document.getElementById(hash + '-page')) {
-                    switchPage(hash);
+                if (link.getAttribute('data-page') === pageId) {
+                    link.classList.add('active');
                 } else {
-                    switchPage('home');
+                    link.classList.remove('active');
                 }
+            });
+            
+            window.location.hash = pageId;
+            window.scrollTo(0, 0);
+            
+            // Close mobile menu when switching pages
+            closeMobileMenu();
+        }
+        
+        // Function to close mobile menu
+        function closeMobileMenu() {
+            mobileMenuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+        }
+        
+        // Function to open mobile menu
+        function openMobileMenu() {
+            mobileMenuToggle.classList.add('active');
+            mobileNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        }
+        
+        // Add click event to nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('data-page');
+                switchPage(pageId);
+            });
+        });
+        
+        // Mobile menu toggle
+        mobileMenuToggle.addEventListener('click', function() {
+            if (this.classList.contains('active')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
             }
-            
-            window.addEventListener('hashchange', checkHash);
-            checkHash();
-            
-            // Nav scroll effect
-            window.addEventListener('scroll', function() {
-                const nav = document.querySelector('nav');
-                if (window.scrollY > 50) {
-                    nav.classList.add('scrolled');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                closeMobileMenu();
+            });
+        });
+        
+        // Check URL hash on load
+        function checkHash() {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash + '-page')) {
+                switchPage(hash);
+            } else {
+                switchPage('home');
+            }
+        }
+        
+        window.addEventListener('hashchange', checkHash);
+        checkHash();
+        
+        // Nav scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+        
+        // Gallery category selection
+        const galleryCategories = document.querySelectorAll('.gallery-category');
+        const collectionSections = document.querySelectorAll('.collection-section');
+        
+        galleryCategories.forEach(category => {
+            category.addEventListener('click', function() {
+                const categoryId = this.getAttribute('data-category');
+                
+                galleryCategories.forEach(cat => cat.classList.remove('active'));
+                this.classList.add('active');
+                
+                if (categoryId === 'all') {
+                    collectionSections.forEach(section => {
+                        section.classList.add('active');
+                    });
                 } else {
-                    nav.classList.remove('scrolled');
+                    collectionSections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    document.getElementById(categoryId + '-section').classList.add('active');
                 }
             });
-            
-            // Gallery category selection
-            const galleryCategories = document.querySelectorAll('.gallery-category');
-            const collectionSections = document.querySelectorAll('.collection-section');
-            
-            galleryCategories.forEach(category => {
-                category.addEventListener('click', function() {
-                    const categoryId = this.getAttribute('data-category');
-                    
-                    galleryCategories.forEach(cat => cat.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    if (categoryId === 'all') {
-                        collectionSections.forEach(section => {
-                            section.classList.add('active');
-                        });
-                    } else {
-                        collectionSections.forEach(section => {
-                            section.classList.remove('active');
-                        });
-                        document.getElementById(categoryId + '-section').classList.add('active');
+        });
+        
+        // FAQ accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                // Close all other FAQ answers
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.nextElementSibling.style.display = 'none';
+                        q.querySelector('i').classList.remove('fa-chevron-up');
+                        q.querySelector('i').classList.add('fa-chevron-down');
                     }
                 });
+                
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    answer.style.display = 'block';
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
             });
-            
-            // FAQ accordion functionality
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
-                    const answer = this.nextElementSibling;
-                    const icon = this.querySelector('i');
+        });
+        
+        // Modal functionality
+        const modal = document.querySelector('.product-modal');
+        const modalClose = document.querySelector('.modal-close');
+        const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
+        
+        viewDetailsBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const productId = this.getAttribute('data-product');
+                const product = products[productId];
+                
+                if (product) {
+                    document.getElementById('modal-title').textContent = product.title;
+                    document.getElementById('modal-description').textContent = product.description;
+                    document.getElementById('modal-image').src = product.image;
+                    document.getElementById('modal-image').alt = product.title;
                     
-                    if (answer.style.display === 'block') {
-                        answer.style.display = 'none';
-                        icon.classList.remove('fa-chevron-up');
-                        icon.classList.add('fa-chevron-down');
-                    } else {
-                        answer.style.display = 'block';
-                        icon.classList.remove('fa-chevron-down');
-                        icon.classList.add('fa-chevron-up');
-                    }
-                });
+                    const featuresList = document.getElementById('modal-features');
+                    featuresList.innerHTML = '';
+                    product.features.forEach(feature => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<i class="fas fa-check"></i> ${feature}`;
+                        featuresList.appendChild(li);
+                    });
+                    
+                    // Update WhatsApp link
+                    const whatsappLink = document.getElementById('modal-whatsapp');
+                    const message = `Hello Navis Signature!%0A%0AI would like to order:%0A*Product:* ${product.title}%0A%0APlease provide me with more details about availability and ordering.`;
+                    whatsappLink.href = `https://wa.me/233200635642?text=${message}`;
+                    
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                    document.documentElement.style.overflow = 'hidden';
+                }
             });
-            
-            // Modal functionality
-            const modal = document.querySelector('.product-modal');
-            const modalClose = document.querySelector('.modal-close');
-            const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
-            
-            viewDetailsBtns.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
+        });
+        
+        // Close modal
+        modalClose.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+        });
+        
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                document.documentElement.style.overflow = 'auto';
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                document.documentElement.style.overflow = 'auto';
+            }
+        });
+        
+        // Direct WhatsApp order from gallery items
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                // Don't trigger if clicking on view details button
+                if (!e.target.classList.contains('view-details-btn') && 
+                    !e.target.closest('.view-details-btn') &&
+                    !e.target.classList.contains('gallery-item-overlay') &&
+                    !e.target.closest('.gallery-item-overlay')) {
+                    
                     const productId = this.getAttribute('data-product');
                     const product = products[productId];
                     
                     if (product) {
-                        document.getElementById('modal-title').textContent = product.title;
-                        document.getElementById('modal-description').textContent = product.description;
-                        document.getElementById('modal-image').src = product.image;
-                        document.getElementById('modal-image').alt = product.title;
-                        
-                        const featuresList = document.getElementById('modal-features');
-                        featuresList.innerHTML = '';
-                        product.features.forEach(feature => {
-                            const li = document.createElement('li');
-                            li.innerHTML = `<i class="fas fa-check"></i> ${feature}`;
-                            featuresList.appendChild(li);
-                        });
-                        
-                        // Update WhatsApp link
-                        const whatsappLink = document.getElementById('modal-whatsapp');
-                        const message = `Hello Navis Signature!%0A%0AI would like to order:%0A*Product:* ${product.title}%0A%0APlease provide me with more details about availability and ordering.`;
-                        whatsappLink.href = `https://wa.me/233200635642?text=${message}`;
-                        
-                        modal.style.display = 'flex';
-                        document.body.style.overflow = 'hidden';
+                        const message = `Hello Navis Signature!%0A%0AI'm interested in this product:%0A*Product:* ${product.title}%0A%0ACan you please provide more information?`;
+                        window.open(`https://wa.me/233200635642?text=${message}`, '_blank');
                     }
-                });
-            });
-            
-            // Close modal
-            modalClose.addEventListener('click', function() {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
-            
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            // Close modal with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal.style.display === 'flex') {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            // Direct WhatsApp order from gallery items
-            document.querySelectorAll('.gallery-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    // Don't trigger if clicking on view details button
-                    if (!e.target.classList.contains('view-details-btn') && 
-                        !e.target.closest('.view-details-btn') &&
-                        !e.target.classList.contains('gallery-item-overlay') &&
-                        !e.target.closest('.gallery-item-overlay')) {
-                        
-                        const productId = this.getAttribute('data-product');
-                        const product = products[productId];
-                        
-                        if (product) {
-                            const message = `Hello Navis Signature!%0A%0AI'm interested in this product:%0A*Product:* ${product.title}%0A%0ACan you please provide more information?`;
-                            window.open(`https://wa.me/233200635642?text=${message}`, '_blank');
-                        }
-                    }
-                });
-            });
-            
-            // Add subtle animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            document.querySelectorAll('.collection-card, .testimonial-card, .gallery-item, .process-step, .stat-item').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-            
-            // Contact form submission
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Thank you for your message! We will get back to you soon.');
-                    contactForm.reset();
-                });
-            }
-            
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (mobileNav.classList.contains('active') && 
-                    !e.target.closest('.mobile-nav') && 
-                    !e.target.closest('.mobile-menu-toggle')) {
-                    mobileMenuToggle.classList.remove('active');
-                    mobileNav.classList.remove('active');
-                }
-            });
-            
-            // Prevent body scroll when mobile menu is open
-            mobileMenuToggle.addEventListener('click', function() {
-                if (this.classList.contains('active')) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            // Close mobile menu when resizing to larger screens
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    mobileMenuToggle.classList.remove('active');
-                    mobileNav.classList.remove('active');
-                    document.body.style.overflow = 'auto';
                 }
             });
         });
-    </script>
+        
+        // Add subtle animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.collection-card, .testimonial-card, .gallery-item, .process-step, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (mobileNav.classList.contains('active') && 
+                !e.target.closest('.mobile-nav') && 
+                !e.target.closest('.mobile-menu-toggle')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Close mobile menu when resizing to larger screens
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Fix for iOS Safari scrolling issue
+        document.addEventListener('touchmove', function(e) {
+            if (mobileNav.classList.contains('active')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        // Ensure body scroll is restored on page load
+        window.addEventListener('load', function() {
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+        });
+    });
+</script>
 </body>
 </html>
