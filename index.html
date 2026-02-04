@@ -737,12 +737,6 @@
             margin-bottom: 1rem;
         }
         
-        .price {
-            color: var(--accent-blue);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        
         /* Product Modal */
         .product-modal {
             display: none;
@@ -818,13 +812,6 @@
             color: #475569;
             margin-bottom: 1.5rem;
             line-height: 1.6;
-        }
-        
-        .modal-price {
-            font-size: 1.5rem;
-            color: var(--accent-blue);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
         }
         
         .modal-features {
@@ -1585,7 +1572,6 @@
                 <div class="modal-details">
                     <h3 id="modal-title">Product Name</h3>
                     <p id="modal-description">Product description goes here.</p>
-                    <div class="modal-price" id="modal-price">$199.99</div>
                     <ul class="modal-features" id="modal-features">
                         <!-- Features will be added dynamically -->
                     </ul>
@@ -1736,133 +1722,361 @@
                 <div class="gallery-category" data-category="belts">Belts</div>
             </div>
             
-            <!-- Shoes Collection -->
+            <!-- Shoes Collection (image19 to image41) -->
             <div class="collection-section active" id="shoes-section">
                 <h3 class="collection-title">Premium Shoes Collection</h3>
                 <div class="gallery-grid">
-                    <!-- Shoes images (image1 - image10) -->
-                    <div class="gallery-item" data-category="shoes" data-product="1">
-                        <div class="product-image">
-                            <!-- Fallback image if local image doesn't load -->
-                            <img src="images/image1.jpg" alt="Classic Oxford Shoes" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        </div>
+                    <!-- Image 19 -->
+                    <div class="gallery-item" data-category="shoes" data-product="19">
+                        <img src="images/image19.jpeg" alt="Designer Shoe 1" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="product-info">
-                            <h4>Classic Oxford</h4>
-                            <p>Timeless elegance with hand-stitched leather</p>
-                            <div class="price">$249.99</div>
+                            <h4>Designer Shoe 1</h4>
+                            <p>Contemporary design with premium comfort</p>
                         </div>
                         <div class="gallery-item-overlay">
-                            <h3>Classic Oxford</h3>
-                            <p>Premium leather | Handcrafted | Formal wear</p>
-                            <button class="whatsapp-btn view-details-btn" data-product="1">
+                            <h3>Designer Shoe 1</h3>
+                            <p>Premium materials | Modern design | All-day comfort</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="19">
                                 <i class="fas fa-eye"></i> View Details
                             </button>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="shoes" data-product="2">
-                        <div class="product-image">
-                            <img src="images/image2.jpg" alt="Modern Loafers" onerror="this.src='https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        </div>
+                    <!-- Image 20 -->
+                    <div class="gallery-item" data-category="shoes" data-product="20">
+                        <img src="images/image20.jpeg" alt="Designer Shoe 2" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="product-info">
-                            <h4>Modern Loafers</h4>
-                            <p>Contemporary comfort with premium suede</p>
-                            <div class="price">$219.99</div>
+                            <h4>Designer Shoe 2</h4>
+                            <p>Sophisticated style for modern gentlemen</p>
                         </div>
                         <div class="gallery-item-overlay">
-                            <h3>Modern Loafers</h3>
-                            <p>Premium suede | Casual elegance | Slip-on design</p>
-                            <button class="whatsapp-btn view-details-btn" data-product="2">
+                            <h3>Designer Shoe 2</h3>
+                            <p>Sophisticated style | Modern design | Premium finish</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="20">
                                 <i class="fas fa-eye"></i> View Details
                             </button>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="shoes" data-product="3">
-                        <div class="product-image">
-                            <img src="images/image3.jpg" alt="Artisan Boots" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        </div>
+                    <!-- Image 21 -->
+                    <div class="gallery-item" data-category="shoes" data-product="21">
+                        <img src="images/image21.jpeg" alt="Designer Shoe 3" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="product-info">
-                            <h4>Artisan Boots</h4>
-                            <p>Rugged sophistication with weather-resistant finish</p>
-                            <div class="price">$279.99</div>
+                            <h4>Designer Shoe 3</h4>
+                            <p>Classic design with contemporary twist</p>
                         </div>
                         <div class="gallery-item-overlay">
-                            <h3>Artisan Boots</h3>
-                            <p>Weather-resistant | Durable | All-season wear</p>
-                            <button class="whatsapp-btn view-details-btn" data-product="3">
+                            <h3>Designer Shoe 3</h3>
+                            <p>Classic design | Contemporary twist | Handcrafted</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="21">
                                 <i class="fas fa-eye"></i> View Details
                             </button>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="shoes" data-product="4">
-                        <div class="product-image">
-                            <img src="images/image4.jpg" alt="Evening Formal Shoes" onerror="this.src='https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        </div>
+                    <!-- Image 22 -->
+                    <div class="gallery-item" data-category="shoes" data-product="22">
+                        <img src="images/image22.jpeg" alt="Designer Shoe 4" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="product-info">
-                            <h4>Evening Formal</h4>
-                            <p>Black tie excellence with patent leather</p>
-                            <div class="price">$259.99</div>
+                            <h4>Designer Shoe 4</h4>
+                            <p>Luxury footwear for special occasions</p>
                         </div>
                         <div class="gallery-item-overlay">
-                            <h3>Evening Formal</h3>
-                            <p>Patent leather | Formal events | Special occasions</p>
-                            <button class="whatsapp-btn view-details-btn" data-product="4">
+                            <h3>Designer Shoe 4</h3>
+                            <p>Luxury footwear | Special occasions | Premium leather</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="22">
                                 <i class="fas fa-eye"></i> View Details
                             </button>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="shoes" data-product="5">
-                        <div class="product-image">
-                            <img src="images/image5.jpg" alt="Casual Elegance Shoes" onerror="this.src='https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        </div>
+                    <!-- Image 23 -->
+                    <div class="gallery-item" data-category="shoes" data-product="23">
+                        <img src="images/image23.jpeg" alt="Designer Shoe 5" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="product-info">
-                            <h4>Casual Elegance</h4>
-                            <p>Relaxed refinement with Italian calfskin</p>
-                            <div class="price">$229.99</div>
+                            <h4>Designer Shoe 5</h4>
+                            <p>Executive style with comfort features</p>
                         </div>
                         <div class="gallery-item-overlay">
-                            <h3>Casual Elegance</h3>
-                            <p>Italian calfskin | Everyday comfort | Versatile style</p>
-                            <button class="whatsapp-btn view-details-btn" data-product="5">
+                            <h3>Designer Shoe 5</h3>
+                            <p>Executive style | Comfort features | Business wear</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="23">
                                 <i class="fas fa-eye"></i> View Details
                             </button>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="shoes" data-product="6">
-                        <div class="product-image">
-                            <img src="images/image7.jpg" alt="Heritage Wingtip Shoes" onerror="this.src='https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        </div>
+                    <!-- Image 24 -->
+                    <div class="gallery-item" data-category="shoes" data-product="24">
+                        <img src="images/image24.jpeg" alt="Designer Shoe 6" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="product-info">
-                            <h4>Heritage Wingtip</h4>
-                            <p>Classic broguing with antiqued finish</p>
-                            <div class="price">$269.99</div>
+                            <h4>Designer Shoe 6</h4>
+                            <p>Modern aesthetics with traditional craftsmanship</p>
                         </div>
                         <div class="gallery-item-overlay">
-                            <h3>Heritage Wingtip</h3>
-                            <p>Classic broguing | Antiqued finish | Timeless design</p>
-                            <button class="whatsapp-btn view-details-btn" data-product="6">
+                            <h3>Designer Shoe 6</h3>
+                            <p>Modern aesthetics | Traditional craftsmanship | Versatile</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="24">
                                 <i class="fas fa-eye"></i> View Details
                             </button>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="shoes" data-product="7">
-                        <div class="product-image">
-                            <img src="images/image9.jpg" alt="Chelsea Boots" onerror="this.src='https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        </div>
+                    <!-- Image 25 -->
+                    <div class="gallery-item" data-category="shoes" data-product="25">
+                        <img src="images/image25.jpeg" alt="Designer Shoe 7" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="product-info">
-                            <h4>Chelsea Boots</h4>
-                            <p>Modern classic with elastic side panels</p>
-                            <div class="price">$239.99</div>
+                            <h4>Designer Shoe 7</h4>
+                            <p>Elegant formal shoes for professional settings</p>
                         </div>
                         <div class="gallery-item-overlay">
-                            <h3>Chelsea Boots</h3>
-                            <p>Elastic side panels | Easy wear | Modern classic</p>
-                            <button class="whatsapp-btn view-details-btn" data-product="7">
+                            <h3>Designer Shoe 7</h3>
+                            <p>Elegant formal | Professional settings | Quality materials</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="25">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 26 -->
+                    <div class="gallery-item" data-category="shoes" data-product="26">
+                        <img src="images/image26.jpeg" alt="Designer Shoe 8" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 8</h4>
+                            <p>Contemporary design with classic elements</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 8</h3>
+                            <p>Contemporary design | Classic elements | All-day comfort</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="26">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 27 -->
+                    <div class="gallery-item" data-category="shoes" data-product="27">
+                        <img src="images/image27.jpeg" alt="Designer Shoe 9" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 9</h4>
+                            <p>Premium footwear for discerning gentlemen</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 9</h3>
+                            <p>Premium footwear | Discerning gentlemen | Luxury finish</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="27">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 28 -->
+                    <div class="gallery-item" data-category="shoes" data-product="28">
+                        <img src="images/image28.jpeg" alt="Designer Shoe 10" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 10</h4>
+                            <p>Sophisticated style for modern professionals</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 10</h3>
+                            <p>Sophisticated style | Modern professionals | Quality construction</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="28">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Continue with images 29-41 for shoes -->
+                    <div class="gallery-item" data-category="shoes" data-product="29">
+                        <img src="images/image29.jpeg" alt="Designer Shoe 11" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 11</h4>
+                            <p>Elegant design with premium materials</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 11</h3>
+                            <p>Premium materials | Elegant design | Comfort fit</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="29">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="30">
+                        <img src="images/image30.jpeg" alt="Designer Shoe 12" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 12</h4>
+                            <p>Timeless elegance with modern comfort</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 12</h3>
+                            <p>Timeless elegance | Modern comfort | Premium leather</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="30">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="31">
+                        <img src="images/image31.jpeg" alt="Designer Shoe 13" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 13</h4>
+                            <p>Classic brogue design with modern fit</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 13</h3>
+                            <p>Classic brogue | Modern fit | Handcrafted details</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="31">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="32">
+                        <img src="images/image32.jpeg" alt="Designer Shoe 14" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 14</h4>
+                            <p>Contemporary style with traditional craftsmanship</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 14</h3>
+                            <p>Contemporary style | Traditional craftsmanship | Quality finish</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="32">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="33">
+                        <img src="images/image33.jpeg" alt="Designer Shoe 15" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 15</h4>
+                            <p>Luxury footwear for formal occasions</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 15</h3>
+                            <p>Luxury footwear | Formal occasions | Premium materials</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="33">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="34">
+                        <img src="images/image34.jpeg" alt="Designer Shoe 16" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 16</h4>
+                            <p>Elegant design with superior comfort</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 16</h3>
+                            <p>Elegant design | Superior comfort | All-day wear</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="34">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="35">
+                        <img src="images/image35.jpeg" alt="Designer Shoe 17" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 17</h4>
+                            <p>Modern classic with premium finish</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 17</h3>
+                            <p>Modern classic | Premium finish | Versatile style</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="35">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="36">
+                        <img src="images/image36.jpeg" alt="Designer Shoe 18" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 18</h4>
+                            <p>Executive footwear for business professionals</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 18</h3>
+                            <p>Executive footwear | Business professionals | Quality construction</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="36">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="37">
+                        <img src="images/image37.jpeg" alt="Designer Shoe 19" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 19</h4>
+                            <p>Sophisticated style with modern comfort</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 19</h3>
+                            <p>Sophisticated style | Modern comfort | Premium materials</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="37">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="38">
+                        <img src="images/image38.jpeg" alt="Designer Shoe 20" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 20</h4>
+                            <p>Contemporary design with traditional elements</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 20</h3>
+                            <p>Contemporary design | Traditional elements | Handcrafted</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="38">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="39">
+                        <img src="images/image39.jpeg" alt="Designer Shoe 21" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 21</h4>
+                            <p>Luxury design for special occasions</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 21</h3>
+                            <p>Luxury design | Special occasions | Premium finish</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="39">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="40">
+                        <img src="images/image40.jpeg" alt="Designer Shoe 22" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 22</h4>
+                            <p>Modern elegance with classic appeal</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 22</h3>
+                            <p>Modern elegance | Classic appeal | Quality craftsmanship</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="40">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="shoes" data-product="41">
+                        <img src="images/image41.jpeg" alt="Designer Shoe 23" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Shoe 23</h4>
+                            <p>Premium footwear for discerning tastes</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Shoe 23</h3>
+                            <p>Premium footwear | Discerning tastes | Luxury materials</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="41">
                                 <i class="fas fa-eye"></i> View Details
                             </button>
                         </div>
@@ -1874,15 +2088,12 @@
             <div class="collection-section" id="sandals-section">
                 <h3 class="collection-title">Elegant Sandals Collection</h3>
                 <div class="gallery-grid">
-                    <!-- Sandals images -->
+                    <!-- Original sandal images (kept as example) -->
                     <div class="gallery-item" data-category="sandals" data-product="8">
-                        <div class="product-image">
-                            <img src="images/image10.jpg" alt="Designer Sandals" onerror="this.src='https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        </div>
+                        <img src="images/image10.jpg" alt="Designer Sandals" onerror="this.src='https://images.unsplash.com/photo-1581101767113-1677dccc55f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="product-info">
                             <h4>Designer Sandals</h4>
                             <p>Sophisticated design with premium leather</p>
-                            <div class="price">$149.99</div>
                         </div>
                         <div class="gallery-item-overlay">
                             <h3>Designer Sandals</h3>
@@ -1894,13 +2105,10 @@
                     </div>
                     
                     <div class="gallery-item" data-category="sandals" data-product="9">
-                        <div class="product-image">
-                            <img src="images/image12.jpg" alt="Comfort Sandals" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        </div>
+                        <img src="images/image12.jpg" alt="Comfort Sandals" onerror="this.src='https://images.unsplash.com/photo-1581101767113-1677dccc55f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="product-info">
                             <h4>Comfort Sandals</h4>
                             <p>Ultimate comfort with ergonomic design</p>
-                            <div class="price">$129.99</div>
                         </div>
                         <div class="gallery-item-overlay">
                             <h3>Comfort Sandals</h3>
@@ -1913,42 +2121,293 @@
                 </div>
             </div>
             
-            <!-- Slippers Collection -->
+            <!-- Slippers Collection (image1 to image18) -->
             <div class="collection-section" id="slippers-section">
                 <h3 class="collection-title">Palms Slippers Collection</h3>
                 <div class="gallery-grid">
-                    <!-- Slippers images -->
-                    <div class="gallery-item" data-category="slippers" data-product="10">
-                        <div class="product-image">
-                            <img src="images/image13.jpg" alt="Premium Slippers" onerror="this.src='https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        </div>
+                    <!-- Image 1 -->
+                    <div class="gallery-item" data-category="slippers" data-product="1">
+                        <img src="images/image1.jpg" alt="Palm Slippers 1" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="product-info">
-                            <h4>Premium Slippers</h4>
-                            <p>Luxury comfort with soft fabric lining</p>
-                            <div class="price">$89.99</div>
+                            <h4>Palm Slippers 1</h4>
+                            <p>Comfortable palm fiber slippers</p>
                         </div>
                         <div class="gallery-item-overlay">
-                            <h3>Premium Slippers</h3>
-                            <p>Soft fabric lining | Indoor comfort | Relaxation</p>
+                            <h3>Palm Slippers 1</h3>
+                            <p>Palm fiber | Comfortable | Natural materials</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="1">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 2 -->
+                    <div class="gallery-item" data-category="slippers" data-product="2">
+                        <img src="images/image2.jpg" alt="Palm Slippers 2" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 2</h4>
+                            <p>Traditional palm slippers with modern design</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 2</h3>
+                            <p>Traditional design | Modern comfort | Handwoven</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="2">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 3 -->
+                    <div class="gallery-item" data-category="slippers" data-product="3">
+                        <img src="images/image3.jpg" alt="Palm Slippers 3" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 3</h4>
+                            <p>Eco-friendly palm slippers for home wear</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 3</h3>
+                            <p>Eco-friendly | Home wear | Natural comfort</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="3">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 4 -->
+                    <div class="gallery-item" data-category="slippers" data-product="4">
+                        <img src="images/image4.jpg" alt="Palm Slippers 4" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 4</h4>
+                            <p>Lightweight palm slippers for casual wear</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 4</h3>
+                            <p>Lightweight | Casual wear | Breathable</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="4">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 5 -->
+                    <div class="gallery-item" data-category="slippers" data-product="5">
+                        <img src="images/image5.jpg" alt="Palm Slippers 5" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 5</h4>
+                            <p>Handcrafted palm slippers with traditional patterns</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 5</h3>
+                            <p>Handcrafted | Traditional patterns | Cultural design</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="5">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 6 -->
+                    <div class="gallery-item" data-category="slippers" data-product="6">
+                        <img src="images/image6.jpg" alt="Palm Slippers 6" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 6</h4>
+                            <p>Comfortable slippers for indoor relaxation</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 6</h3>
+                            <p>Indoor relaxation | Comfortable | Easy wear</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="6">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 7 -->
+                    <div class="gallery-item" data-category="slippers" data-product="7">
+                        <img src="images/image7.jpg" alt="Palm Slippers 7" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 7</h4>
+                            <p>Natural fiber slippers with ergonomic design</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 7</h3>
+                            <p>Natural fiber | Ergonomic design | Foot support</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="7">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 8 -->
+                    <div class="gallery-item" data-category="slippers" data-product="8">
+                        <img src="images/image8.jpg" alt="Palm Slippers 8" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 8</h4>
+                            <p>Traditional craftsmanship with modern comfort</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 8</h3>
+                            <p>Traditional craftsmanship | Modern comfort | Durable</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="8">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 9 -->
+                    <div class="gallery-item" data-category="slippers" data-product="9">
+                        <img src="images/image9.jpg" alt="Palm Slippers 9" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 9</h4>
+                            <p>Eco-friendly footwear for conscious consumers</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 9</h3>
+                            <p>Eco-friendly | Sustainable | Natural materials</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="9">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 10 -->
+                    <div class="gallery-item" data-category="slippers" data-product="10">
+                        <img src="images/image10.jpg" alt="Palm Slippers 10" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 10</h4>
+                            <p>Handwoven palm slippers with unique designs</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 10</h3>
+                            <p>Handwoven | Unique designs | Artisanal quality</p>
                             <button class="whatsapp-btn view-details-btn" data-product="10">
                                 <i class="fas fa-eye"></i> View Details
                             </button>
                         </div>
                     </div>
                     
+                    <!-- Image 11 -->
                     <div class="gallery-item" data-category="slippers" data-product="11">
-                        <div class="product-image">
-                            <img src="images/image14.jpg" alt="Casual Slippers" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        </div>
+                        <img src="images/image11.jpg" alt="Palm Slippers 11" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="product-info">
-                            <h4>Casual Slippers</h4>
-                            <p>Everyday comfort with durable sole</p>
-                            <div class="price">$79.99</div>
+                            <h4>Palm Slippers 11</h4>
+                            <p>Natural palm fiber for everyday comfort</p>
                         </div>
                         <div class="gallery-item-overlay">
-                            <h3>Casual Slippers</h3>
-                            <p>Durable sole | Quick wear | Home comfort</p>
+                            <h3>Palm Slippers 11</h3>
+                            <p>Natural palm fiber | Everyday comfort | Eco-friendly</p>
                             <button class="whatsapp-btn view-details-btn" data-product="11">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 12 -->
+                    <div class="gallery-item" data-category="slippers" data-product="12">
+                        <img src="images/image12.jpg" alt="Palm Slippers 12" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 12</h4>
+                            <p>Traditional African palm slippers</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 12</h3>
+                            <p>Traditional African | Cultural heritage | Handmade</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="12">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 13 -->
+                    <div class="gallery-item" data-category="slippers" data-product="13">
+                        <img src="images/image13.jpg" alt="Palm Slippers 13" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 13</h4>
+                            <p>Comfortable slippers for home and garden</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 13</h3>
+                            <p>Home and garden | Comfortable | Durable</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="13">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 14 -->
+                    <div class="gallery-item" data-category="slippers" data-product="14">
+                        <img src="images/image14.jpg" alt="Palm Slippers 14" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 14</h4>
+                            <p>Eco-friendly footwear with traditional design</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 14</h3>
+                            <p>Eco-friendly | Traditional design | Sustainable materials</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="14">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 15 -->
+                    <div class="gallery-item" data-category="slippers" data-product="15">
+                        <img src="images/image15.jpg" alt="Palm Slippers 15" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 15</h4>
+                            <p>Handcrafted palm fiber slippers</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 15</h3>
+                            <p>Handcrafted | Palm fiber | Natural materials</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="15">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 16 -->
+                    <div class="gallery-item" data-category="slippers" data-product="16">
+                        <img src="images/image16.jpg" alt="Palm Slippers 16" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 16</h4>
+                            <p>Traditional slippers with modern comfort</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 16</h3>
+                            <p>Traditional design | Modern comfort | Cultural heritage</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="16">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 17 -->
+                    <div class="gallery-item" data-category="slippers" data-product="17">
+                        <img src="images/image17.jpg" alt="Palm Slippers 17" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 17</h4>
+                            <p>Natural fiber slippers for everyday use</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 17</h3>
+                            <p>Natural fiber | Everyday use | Comfortable</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="17">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 18 -->
+                    <div class="gallery-item" data-category="slippers" data-product="18">
+                        <img src="images/image18.jpg" alt="Palm Slippers 18" onerror="this.src='https://images.unsplash.com/photo-1601925260368-ae2f83a49d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Palm Slippers 18</h4>
+                            <p>Eco-friendly palm slippers with modern design</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Palm Slippers 18</h3>
+                            <p>Eco-friendly | Modern design | Sustainable</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="18">
                                 <i class="fas fa-eye"></i> View Details
                             </button>
                         </div>
@@ -1956,42 +2415,171 @@
                 </div>
             </div>
             
-            <!-- Belts Collection -->
+            <!-- Belts Collection (image41 to image51) -->
             <div class="collection-section" id="belts-section">
                 <h3 class="collection-title">Designer Belts Collection</h3>
                 <div class="gallery-grid">
-                    <!-- Belts images -->
-                    <div class="gallery-item" data-category="belts" data-product="12">
-                        <div class="product-image">
-                            <img src="images/image15.jpg" alt="Leather Belt" onerror="this.src='https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        </div>
+                    <!-- Original belt images (kept for reference) -->
+                    <div class="gallery-item" data-category="belts" data-product="42">
+                        <img src="images/image41.jpeg" alt="Designer Belt 1" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="product-info">
-                            <h4>Leather Belt</h4>
-                            <p>Genuine leather with polished buckle</p>
-                            <div class="price">$69.99</div>
+                            <h4>Designer Belt 1</h4>
+                            <p>Elegant belt for formal occasions</p>
                         </div>
                         <div class="gallery-item-overlay">
-                            <h3>Leather Belt</h3>
-                            <p>Genuine leather | Polished buckle | Formal wear</p>
-                            <button class="whatsapp-btn view-details-btn" data-product="12">
+                            <h3>Designer Belt 1</h3>
+                            <p>Elegant design | Formal occasions | Premium leather</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="42">
                                 <i class="fas fa-eye"></i> View Details
                             </button>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="belts" data-product="13">
-                        <div class="product-image">
-                            <img src="images/image16.jpg" alt="Designer Belt" onerror="this.src='https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        </div>
+                    <div class="gallery-item" data-category="belts" data-product="43">
+                        <img src="images/image42.jpeg" alt="Designer Belt 2" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="product-info">
-                            <h4>Designer Belt</h4>
-                            <p>Exquisite design with premium finish</p>
-                            <div class="price">$89.99</div>
+                            <h4>Designer Belt 2</h4>
+                            <p>Contemporary belt with unique buckle</p>
                         </div>
                         <div class="gallery-item-overlay">
-                            <h3>Designer Belt</h3>
-                            <p>Premium finish | Unique design | Statement piece</p>
-                            <button class="whatsapp-btn view-details-btn" data-product="13">
+                            <h3>Designer Belt 2</h3>
+                            <p>Contemporary design | Unique buckle | Fashion accessory</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="43">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="belts" data-product="44">
+                        <img src="images/image43.jpeg" alt="Designer Belt 3" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Belt 3</h4>
+                            <p>Luxury belt for sophisticated style</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Belt 3</h3>
+                            <p>Luxury design | Sophisticated style | Quality materials</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="44">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="belts" data-product="45">
+                        <img src="images/image44.jpeg" alt="Designer Belt 4" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Belt 4</h4>
+                            <p>Classic belt with modern elements</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Belt 4</h3>
+                            <p>Classic design | Modern elements | Versatile wear</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="45">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="belts" data-product="46">
+                        <img src="images/image45.jpeg" alt="Designer Belt 5" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Belt 5</h4>
+                            <p>Executive belt for professional attire</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Belt 5</h3>
+                            <p>Executive style | Professional attire | Premium finish</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="46">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="belts" data-product="47">
+                        <img src="images/image46.jpeg" alt="Designer Belt 6" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Belt 6</h4>
+                            <p>Fashion belt with distinctive design</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Belt 6</h3>
+                            <p>Fashion accessory | Distinctive design | Style statement</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="47">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="belts" data-product="48">
+                        <img src="images/image47.jpeg" alt="Designer Belt 7" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Belt 7</h4>
+                            <p>Premium leather belt with elegant buckle</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Belt 7</h3>
+                            <p>Premium leather | Elegant buckle | Formal occasions</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="48">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="belts" data-product="49">
+                        <img src="images/image48.jpeg" alt="Designer Belt 8" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Belt 8</h4>
+                            <p>Contemporary design for modern fashion</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Belt 8</h3>
+                            <p>Contemporary design | Modern fashion | Style accessory</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="49">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="belts" data-product="50">
+                        <img src="images/image49.jpeg" alt="Designer Belt 9" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Belt 9</h4>
+                            <p>Luxury accessory for complete outfits</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Belt 9</h3>
+                            <p>Luxury accessory | Complete outfits | Fashion finish</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="50">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="belts" data-product="51">
+                        <img src="images/image50.jpeg" alt="Designer Belt 10" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Belt 10</h4>
+                            <p>Sophisticated belt for elegant style</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Belt 10</h3>
+                            <p>Sophisticated design | Elegant style | Quality craftsmanship</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="51">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="belts" data-product="52">
+                        <img src="images/image51.jpeg" alt="Designer Belt 11" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="product-info">
+                            <h4>Designer Belt 11</h4>
+                            <p>Premium accessory for fashion connoisseurs</p>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <h3>Designer Belt 11</h3>
+                            <p>Premium accessory | Fashion connoisseurs | Luxury design</p>
+                            <button class="whatsapp-btn view-details-btn" data-product="52">
                                 <i class="fas fa-eye"></i> View Details
                             </button>
                         </div>
@@ -2256,103 +2844,639 @@
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const mobileNav = document.querySelector('.mobile-nav');
             
-            // Product data for modal
+            // Product data for modal (expanded for all products)
             const products = {
                 1: {
-                    title: "Classic Oxford",
-                    description: "Experience timeless elegance with our Classic Oxford shoes. Handcrafted from premium leather using traditional techniques, these shoes offer unparalleled comfort and style for formal occasions.",
-                    price: "$249.99",
+                    title: "Palm Slippers 1",
+                    description: "Comfortable palm fiber slippers perfect for indoor relaxation. Made from natural, eco-friendly materials.",
                     image: "images/image1.jpg",
                     features: [
-                        "Premium full-grain leather",
-                        "Hand-stitched construction",
-                        "Leather sole with rubber inserts",
-                        "Cork footbed for comfort",
-                        "Available in black and brown"
+                        "100% natural palm fiber",
+                        "Eco-friendly materials",
+                        "Comfortable footbed",
+                        "Breathable design",
+                        "Handcrafted construction"
                     ]
                 },
                 2: {
-                    title: "Modern Loafers",
-                    description: "Contemporary comfort meets classic style in our Modern Loafers. Made from premium suede with a flexible sole, these shoes are perfect for both casual and business casual settings.",
-                    price: "$219.99",
+                    title: "Palm Slippers 2",
+                    description: "Traditional palm slippers with modern design elements for contemporary comfort.",
                     image: "images/image2.jpg",
                     features: [
-                        "Premium suede upper",
-                        "Flexible rubber sole",
-                        "Memory foam insole",
-                        "Slip-on design",
-                        "Available in multiple colors"
+                        "Traditional design",
+                        "Modern comfort features",
+                        "Handwoven construction",
+                        "Natural materials",
+                        "Cultural heritage design"
                     ]
                 },
                 3: {
-                    title: "Artisan Boots",
-                    description: "Rugged sophistication defined. Our Artisan Boots feature weather-resistant leather and durable construction, making them perfect for all seasons and occasions.",
-                    price: "$279.99",
+                    title: "Palm Slippers 3",
+                    description: "Eco-friendly palm slippers designed for comfortable home wear and relaxation.",
                     image: "images/image3.jpg",
                     features: [
-                        "Weather-resistant leather",
-                        "Goodyear welt construction",
-                        "Vibram® rubber sole",
-                        "Water-resistant finish",
-                        "Ankle support design"
+                        "Eco-friendly materials",
+                        "Perfect for home wear",
+                        "Natural comfort",
+                        "Sustainable production",
+                        "Breathable design"
                     ]
                 },
                 4: {
-                    title: "Evening Formal",
-                    description: "Make a statement at black-tie events with our Evening Formal shoes. Featuring patent leather and a sleek design, these shoes exude sophistication and class.",
-                    price: "$259.99",
+                    title: "Palm Slippers 4",
+                    description: "Lightweight palm slippers ideal for casual wear around the house or garden.",
                     image: "images/image4.jpg",
                     features: [
-                        "High-gloss patent leather",
-                        "Leather sole with grip",
-                        "Slim silhouette design",
-                        "Formal occasion ready",
-                        "Easy maintenance finish"
+                        "Lightweight construction",
+                        "Casual wear design",
+                        "Breathable materials",
+                        "Easy to wear",
+                        "Comfortable fit"
                     ]
                 },
                 5: {
-                    title: "Casual Elegance",
-                    description: "Relaxed refinement for everyday wear. These shoes combine Italian calfskin comfort with versatile styling that works from office to evening outings.",
-                    price: "$229.99",
+                    title: "Palm Slippers 5",
+                    description: "Handcrafted palm slippers featuring traditional patterns and cultural designs.",
                     image: "images/image5.jpg",
                     features: [
-                        "Italian calfskin leather",
-                        "Cushioned footbed",
-                        "Versatile design",
-                        "Breathable lining",
-                        "All-day comfort"
+                        "Handcrafted construction",
+                        "Traditional patterns",
+                        "Cultural design elements",
+                        "Artisanal quality",
+                        "Unique styling"
                     ]
                 },
                 6: {
-                    title: "Heritage Wingtip",
-                    description: "A nod to traditional shoemaking with modern comfort. The Heritage Wingtip features classic broguing and an antiqued finish for a distinguished look.",
-                    price: "$269.99",
-                    image: "images/image7.jpg",
+                    title: "Palm Slippers 6",
+                    description: "Comfortable slippers designed for indoor relaxation and casual home wear.",
+                    image: "images/image6.jpg",
                     features: [
-                        "Classic brogue detailing",
-                        "Antiqued leather finish",
-                        "Leather insole and outsole",
-                        "Timeless design",
-                        "Hand-polished finish"
+                        "Indoor relaxation design",
+                        "Comfortable footbed",
+                        "Easy slip-on wear",
+                        "Lightweight materials",
+                        "Home comfort focused"
                     ]
                 },
                 7: {
-                    title: "Chelsea Boots",
-                    description: "The modern classic reinvented. Our Chelsea Boots feature elastic side panels for easy wear and a sleek silhouette that pairs with everything.",
-                    price: "$239.99",
-                    image: "images/image9.jpg",
+                    title: "Palm Slippers 7",
+                    description: "Natural fiber slippers with ergonomic design for optimal foot support and comfort.",
+                    image: "images/image7.jpg",
                     features: [
-                        "Elastic side panels",
-                        "Pull tab for easy wear",
-                        "Leather and rubber sole",
-                        "Sleek silhouette",
-                        "Versatile styling"
+                        "Natural fiber materials",
+                        "Ergonomic design",
+                        "Foot support features",
+                        "Comfortable wear",
+                        "Health benefits"
                     ]
                 },
                 8: {
+                    title: "Palm Slippers 8",
+                    description: "Traditional craftsmanship combined with modern comfort features for durable wear.",
+                    image: "images/image8.jpg",
+                    features: [
+                        "Traditional craftsmanship",
+                        "Modern comfort features",
+                        "Durable construction",
+                        "Quality materials",
+                        "Cultural heritage"
+                    ]
+                },
+                9: {
+                    title: "Palm Slippers 9",
+                    description: "Eco-friendly footwear designed for conscious consumers who value sustainability.",
+                    image: "images/image9.jpg",
+                    features: [
+                        "Eco-friendly materials",
+                        "Sustainable production",
+                        "Natural materials",
+                        "Conscious consumption",
+                        "Environmentally friendly"
+                    ]
+                },
+                10: {
+                    title: "Palm Slippers 10",
+                    description: "Handwoven palm slippers featuring unique designs and artisanal quality craftsmanship.",
+                    image: "images/image10.jpg",
+                    features: [
+                        "Handwoven construction",
+                        "Unique designs",
+                        "Artisanal quality",
+                        "Cultural patterns",
+                        "Traditional techniques"
+                    ]
+                },
+                11: {
+                    title: "Palm Slippers 11",
+                    description: "Natural palm fiber slippers providing everyday comfort with eco-friendly materials.",
+                    image: "images/image11.jpg",
+                    features: [
+                        "Natural palm fiber",
+                        "Everyday comfort",
+                        "Eco-friendly",
+                        "Breathable design",
+                        "Sustainable materials"
+                    ]
+                },
+                12: {
+                    title: "Palm Slippers 12",
+                    description: "Traditional African palm slippers celebrating cultural heritage and handmade craftsmanship.",
+                    image: "images/image12.jpg",
+                    features: [
+                        "Traditional African design",
+                        "Cultural heritage",
+                        "Handmade construction",
+                        "Authentic patterns",
+                        "Artisanal craftsmanship"
+                    ]
+                },
+                13: {
+                    title: "Palm Slippers 13",
+                    description: "Comfortable slippers designed for both home and garden wear with durable construction.",
+                    image: "images/image13.jpg",
+                    features: [
+                        "Home and garden use",
+                        "Comfortable design",
+                        "Durable materials",
+                        "Versatile wear",
+                        "Easy maintenance"
+                    ]
+                },
+                14: {
+                    title: "Palm Slippers 14",
+                    description: "Eco-friendly footwear featuring traditional design elements with sustainable materials.",
+                    image: "images/image14.jpg",
+                    features: [
+                        "Eco-friendly construction",
+                        "Traditional design",
+                        "Sustainable materials",
+                        "Cultural elements",
+                        "Environmentally conscious"
+                    ]
+                },
+                15: {
+                    title: "Palm Slippers 15",
+                    description: "Handcrafted palm fiber slippers showcasing traditional techniques and natural materials.",
+                    image: "images/image15.jpg",
+                    features: [
+                        "Handcrafted construction",
+                        "Palm fiber materials",
+                        "Natural materials",
+                        "Traditional techniques",
+                        "Artisanal quality"
+                    ]
+                },
+                16: {
+                    title: "Palm Slippers 16",
+                    description: "Traditional slippers updated with modern comfort features for contemporary wear.",
+                    image: "images/image16.jpg",
+                    features: [
+                        "Traditional design",
+                        "Modern comfort",
+                        "Cultural heritage",
+                        "Updated features",
+                        "Contemporary style"
+                    ]
+                },
+                17: {
+                    title: "Palm Slippers 17",
+                    description: "Natural fiber slippers designed for everyday use with comfort and durability in mind.",
+                    image: "images/image17.jpg",
+                    features: [
+                        "Natural fiber materials",
+                        "Everyday use design",
+                        "Comfortable wear",
+                        "Durable construction",
+                        "Practical design"
+                    ]
+                },
+                18: {
+                    title: "Palm Slippers 18",
+                    description: "Eco-friendly palm slippers featuring modern design elements with sustainable construction.",
+                    image: "images/image18.jpg",
+                    features: [
+                        "Eco-friendly materials",
+                        "Modern design",
+                        "Sustainable construction",
+                        "Contemporary style",
+                        "Environmentally friendly"
+                    ]
+                },
+                19: {
+                    title: "Designer Shoe 1",
+                    description: "Contemporary shoe design with premium comfort features for all-day wear.",
+                    image: "images/image19.jpeg",
+                    features: [
+                        "Premium materials",
+                        "Modern design",
+                        "All-day comfort",
+                        "Quality construction",
+                        "Versatile styling"
+                    ]
+                },
+                20: {
+                    title: "Designer Shoe 2",
+                    description: "Sophisticated style crafted for modern gentlemen with premium finish and design.",
+                    image: "images/image20.jpeg",
+                    features: [
+                        "Sophisticated style",
+                        "Modern design",
+                        "Premium finish",
+                        "Comfortable fit",
+                        "Versatile wear"
+                    ]
+                },
+                // Continue adding products for images 21-41 for shoes
+                21: {
+                    title: "Designer Shoe 3",
+                    description: "Classic design with contemporary twist for timeless appeal and modern comfort.",
+                    image: "images/image21.jpeg",
+                    features: [
+                        "Classic design",
+                        "Contemporary twist",
+                        "Handcrafted",
+                        "Quality materials",
+                        "Timeless appeal"
+                    ]
+                },
+                22: {
+                    title: "Designer Shoe 4",
+                    description: "Luxury footwear designed for special occasions with premium leather and elegant design.",
+                    image: "images/image22.jpeg",
+                    features: [
+                        "Luxury footwear",
+                        "Special occasions",
+                        "Premium leather",
+                        "Elegant design",
+                        "Exceptional comfort"
+                    ]
+                },
+                23: {
+                    title: "Designer Shoe 5",
+                    description: "Executive style shoes with advanced comfort features for professional settings.",
+                    image: "images/image23.jpeg",
+                    features: [
+                        "Executive style",
+                        "Comfort features",
+                        "Business wear",
+                        "Professional design",
+                        "All-day comfort"
+                    ]
+                },
+                24: {
+                    title: "Designer Shoe 6",
+                    description: "Modern aesthetics combined with traditional craftsmanship for versatile wear.",
+                    image: "images/image24.jpeg",
+                    features: [
+                        "Modern aesthetics",
+                        "Traditional craftsmanship",
+                        "Versatile design",
+                        "Quality construction",
+                        "Stylish appearance"
+                    ]
+                },
+                25: {
+                    title: "Designer Shoe 7",
+                    description: "Elegant formal shoes designed for professional settings and formal occasions.",
+                    image: "images/image25.jpeg",
+                    features: [
+                        "Elegant formal design",
+                        "Professional settings",
+                        "Quality materials",
+                        "Comfortable fit",
+                        "Sophisticated style"
+                    ]
+                },
+                26: {
+                    title: "Designer Shoe 8",
+                    description: "Contemporary design with classic elements for all-day comfort and versatile styling.",
+                    image: "images/image26.jpeg",
+                    features: [
+                        "Contemporary design",
+                        "Classic elements",
+                        "All-day comfort",
+                        "Versatile styling",
+                        "Quality craftsmanship"
+                    ]
+                },
+                27: {
+                    title: "Designer Shoe 9",
+                    description: "Premium footwear crafted for discerning gentlemen with luxury finish and materials.",
+                    image: "images/image27.jpeg",
+                    features: [
+                        "Premium footwear",
+                        "Discerning gentlemen",
+                        "Luxury finish",
+                        "Exceptional quality",
+                        "Timeless design"
+                    ]
+                },
+                28: {
+                    title: "Designer Shoe 10",
+                    description: "Sophisticated style designed for modern professionals with quality construction.",
+                    image: "images/image28.jpeg",
+                    features: [
+                        "Sophisticated style",
+                        "Modern professionals",
+                        "Quality construction",
+                        "Comfort features",
+                        "Professional design"
+                    ]
+                },
+                // Continue with remaining shoe products 29-41
+                29: {
+                    title: "Designer Shoe 11",
+                    description: "Elegant shoe design with premium materials for comfort and style.",
+                    image: "images/image29.jpeg",
+                    features: [
+                        "Premium materials",
+                        "Elegant design",
+                        "Comfort fit",
+                        "Quality construction",
+                        "Available in multiple sizes"
+                    ]
+                },
+                30: {
+                    title: "Designer Shoe 12",
+                    description: "Timeless elegance combined with modern comfort features for premium wear.",
+                    image: "images/image30.jpeg",
+                    features: [
+                        "Timeless elegance",
+                        "Modern comfort",
+                        "Premium leather",
+                        "Quality finish",
+                        "Sophisticated style"
+                    ]
+                },
+                31: {
+                    title: "Designer Shoe 13",
+                    description: "Classic brogue design updated with modern fit and handcrafted details.",
+                    image: "images/image31.jpeg",
+                    features: [
+                        "Classic brogue design",
+                        "Modern fit",
+                        "Handcrafted details",
+                        "Quality materials",
+                        "Traditional craftsmanship"
+                    ]
+                },
+                32: {
+                    title: "Designer Shoe 14",
+                    description: "Contemporary style featuring traditional craftsmanship with quality finish.",
+                    image: "images/image32.jpeg",
+                    features: [
+                        "Contemporary style",
+                        "Traditional craftsmanship",
+                        "Quality finish",
+                        "Modern design",
+                        "Comfortable wear"
+                    ]
+                },
+                33: {
+                    title: "Designer Shoe 15",
+                    description: "Luxury footwear designed for formal occasions with premium materials.",
+                    image: "images/image33.jpeg",
+                    features: [
+                        "Luxury design",
+                        "Formal occasions",
+                        "Premium materials",
+                        "Elegant finish",
+                        "Special event wear"
+                    ]
+                },
+                34: {
+                    title: "Designer Shoe 16",
+                    description: "Elegant design with superior comfort features for all-day wear.",
+                    image: "images/image34.jpeg",
+                    features: [
+                        "Elegant design",
+                        "Superior comfort",
+                        "All-day wear",
+                        "Quality materials",
+                        "Comfort features"
+                    ]
+                },
+                35: {
+                    title: "Designer Shoe 17",
+                    description: "Modern classic design with premium finish for versatile style options.",
+                    image: "images/image35.jpeg",
+                    features: [
+                        "Modern classic design",
+                        "Premium finish",
+                        "Versatile style",
+                        "Quality construction",
+                        "Contemporary appeal"
+                    ]
+                },
+                36: {
+                    title: "Designer Shoe 18",
+                    description: "Executive footwear designed for business professionals with quality construction.",
+                    image: "images/image36.jpeg",
+                    features: [
+                        "Executive footwear",
+                        "Business professionals",
+                        "Quality construction",
+                        "Professional design",
+                        "Comfort features"
+                    ]
+                },
+                37: {
+                    title: "Designer Shoe 19",
+                    description: "Sophisticated style with modern comfort features and premium materials.",
+                    image: "images/image37.jpeg",
+                    features: [
+                        "Sophisticated style",
+                        "Modern comfort",
+                        "Premium materials",
+                        "Quality finish",
+                        "Contemporary design"
+                    ]
+                },
+                38: {
+                    title: "Designer Shoe 20",
+                    description: "Contemporary design featuring traditional elements with handcrafted quality.",
+                    image: "images/image38.jpeg",
+                    features: [
+                        "Contemporary design",
+                        "Traditional elements",
+                        "Handcrafted quality",
+                        "Modern style",
+                        "Quality materials"
+                    ]
+                },
+                39: {
+                    title: "Designer Shoe 21",
+                    description: "Luxury design crafted for special occasions with premium finish.",
+                    image: "images/image39.jpeg",
+                    features: [
+                        "Luxury design",
+                        "Special occasions",
+                        "Premium finish",
+                        "Quality materials",
+                        "Elegant style"
+                    ]
+                },
+                40: {
+                    title: "Designer Shoe 22",
+                    description: "Modern elegance combined with classic appeal and quality craftsmanship.",
+                    image: "images/image40.jpeg",
+                    features: [
+                        "Modern elegance",
+                        "Classic appeal",
+                        "Quality craftsmanship",
+                        "Contemporary design",
+                        "Premium materials"
+                    ]
+                },
+                41: {
+                    title: "Designer Shoe 23",
+                    description: "Premium footwear designed for discerning tastes with luxury materials.",
+                    image: "images/image41.jpeg",
+                    features: [
+                        "Premium footwear",
+                        "Discerning tastes",
+                        "Luxury materials",
+                        "Quality construction",
+                        "Elegant design"
+                    ]
+                },
+                // Belt products 42-52
+                42: {
+                    title: "Designer Belt 1",
+                    description: "Elegant belt designed for formal occasions with premium leather and sophisticated style.",
+                    image: "images/image41.jpeg",
+                    features: [
+                        "Elegant design",
+                        "Formal occasions",
+                        "Premium leather",
+                        "Polished buckle",
+                        "Sophisticated style"
+                    ]
+                },
+                43: {
+                    title: "Designer Belt 2",
+                    description: "Contemporary belt featuring unique buckle design as a fashionable accessory.",
+                    image: "images/image42.jpeg",
+                    features: [
+                        "Contemporary design",
+                        "Unique buckle",
+                        "Fashion accessory",
+                        "Modern style",
+                        "Versatile wear"
+                    ]
+                },
+                44: {
+                    title: "Designer Belt 3",
+                    description: "Luxury belt crafted for sophisticated style with quality materials and elegant finish.",
+                    image: "images/image43.jpeg",
+                    features: [
+                        "Luxury design",
+                        "Sophisticated style",
+                        "Quality materials",
+                        "Premium finish",
+                        "Elegant accessory"
+                    ]
+                },
+                45: {
+                    title: "Designer Belt 4",
+                    description: "Classic belt design with modern elements for versatile wear and timeless style.",
+                    image: "images/image44.jpeg",
+                    features: [
+                        "Classic design",
+                        "Modern elements",
+                        "Versatile wear",
+                        "Timeless style",
+                        "Quality construction"
+                    ]
+                },
+                46: {
+                    title: "Designer Belt 5",
+                    description: "Executive belt designed for professional attire with premium finish and sophisticated design.",
+                    image: "images/image45.jpeg",
+                    features: [
+                        "Executive style",
+                        "Professional attire",
+                        "Premium finish",
+                        "Business wear",
+                        "Sophisticated design"
+                    ]
+                },
+                47: {
+                    title: "Designer Belt 6",
+                    description: "Fashion belt with distinctive design making a style statement as a fashionable accessory.",
+                    image: "images/image46.jpeg",
+                    features: [
+                        "Fashion accessory",
+                        "Distinctive design",
+                        "Style statement",
+                        "Unique buckle",
+                        "Modern fashion"
+                    ]
+                },
+                48: {
+                    title: "Designer Belt 7",
+                    description: "Premium leather belt with elegant buckle designed for formal occasions and sophisticated style.",
+                    image: "images/image47.jpeg",
+                    features: [
+                        "Premium leather",
+                        "Elegant buckle",
+                        "Formal occasions",
+                        "Quality craftsmanship",
+                        "Sophisticated style"
+                    ]
+                },
+                49: {
+                    title: "Designer Belt 8",
+                    description: "Contemporary design belt for modern fashion as a stylish accessory.",
+                    image: "images/image48.jpeg",
+                    features: [
+                        "Contemporary design",
+                        "Modern fashion",
+                        "Style accessory",
+                        "Versatile wear",
+                        "Fashion forward"
+                    ]
+                },
+                50: {
+                    title: "Designer Belt 9",
+                    description: "Luxury accessory designed to complete outfits with premium materials and elegant design.",
+                    image: "images/image49.jpeg",
+                    features: [
+                        "Luxury accessory",
+                        "Complete outfits",
+                        "Fashion finish",
+                        "Premium materials",
+                        "Elegant design"
+                    ]
+                },
+                51: {
+                    title: "Designer Belt 10",
+                    description: "Sophisticated belt crafted for elegant style with quality craftsmanship and premium finish.",
+                    image: "images/image50.jpeg",
+                    features: [
+                        "Sophisticated design",
+                        "Elegant style",
+                        "Quality craftsmanship",
+                        "Premium finish",
+                        "Timeless accessory"
+                    ]
+                },
+                52: {
+                    title: "Designer Belt 11",
+                    description: "Premium accessory designed for fashion connoisseurs with luxury design and exceptional quality.",
+                    image: "images/image51.jpeg",
+                    features: [
+                        "Premium accessory",
+                        "Fashion connoisseurs",
+                        "Luxury design",
+                        "Exceptional quality",
+                        "Style statement"
+                    ]
+                },
+                // Original sandal and belt products
+                8: {
                     title: "Designer Sandals",
                     description: "Sophisticated sandals perfect for summer elegance. Made with premium leather and featuring a comfortable footbed for all-day wear.",
-                    price: "$149.99",
                     image: "images/image10.jpg",
                     features: [
                         "Premium leather straps",
@@ -2365,7 +3489,6 @@
                 9: {
                     title: "Comfort Sandals",
                     description: "Ultimate comfort meets style. These ergonomic sandals are perfect for casual wear, vacations, or relaxing weekends.",
-                    price: "$129.99",
                     image: "images/image12.jpg",
                     features: [
                         "Ergonomic footbed design",
@@ -2373,58 +3496,6 @@
                         "Lightweight construction",
                         "Arch support",
                         "Quick-dry materials"
-                    ]
-                },
-                10: {
-                    title: "Premium Slippers",
-                    description: "Luxury comfort for your home. Our Premium Slippers feature soft fabric lining and a comfortable sole for ultimate relaxation.",
-                    price: "$89.99",
-                    image: "images/image13.jpg",
-                    features: [
-                        "Soft fabric lining",
-                        "Memory foam insole",
-                        "Non-slip sole",
-                        "Easy slip-on design",
-                        "Machine washable"
-                    ]
-                },
-                11: {
-                    title: "Casual Slippers",
-                    description: "Everyday comfort with durable construction. Perfect for quick wear around the house or for quick errands.",
-                    price: "$79.99",
-                    image: "images/image14.jpg",
-                    features: [
-                        "Durable rubber sole",
-                        "Breathable upper",
-                        "Quick wear design",
-                        "Lightweight",
-                        "Easy to clean"
-                    ]
-                },
-                12: {
-                    title: "Leather Belt",
-                    description: "Complete your look with our genuine leather belt. Featuring a polished buckle and durable construction for everyday wear.",
-                    price: "$69.99",
-                    image: "images/image15.jpg",
-                    features: [
-                        "Genuine leather",
-                        "Polished metal buckle",
-                        "Multiple size options",
-                        "Formal and casual wear",
-                        "Durable construction"
-                    ]
-                },
-                13: {
-                    title: "Designer Belt",
-                    description: "Make a statement with our Designer Belt. Featuring exquisite detailing and premium finish, this belt adds sophistication to any outfit.",
-                    price: "$89.99",
-                    image: "images/image16.jpg",
-                    features: [
-                        "Premium leather finish",
-                        "Unique buckle design",
-                        "Statement piece",
-                        "Hand-finished edges",
-                        "Luxury packaging"
                     ]
                 }
             };
@@ -2555,7 +3626,6 @@
                     if (product) {
                         document.getElementById('modal-title').textContent = product.title;
                         document.getElementById('modal-description').textContent = product.description;
-                        document.getElementById('modal-price').textContent = product.price;
                         document.getElementById('modal-image').src = product.image;
                         document.getElementById('modal-image').alt = product.title;
                         
@@ -2569,7 +3639,7 @@
                         
                         // Update WhatsApp link
                         const whatsappLink = document.getElementById('modal-whatsapp');
-                        const message = `Hello Navis Signature!%0A%0AI would like to order:%0A*Product:* ${product.title}%0A*Price:* ${product.price}%0A%0APlease provide me with more details about availability and ordering.`;
+                        const message = `Hello Navis Signature!%0A%0AI would like to order:%0A*Product:* ${product.title}%0A%0APlease provide me with more details about availability and ordering.`;
                         whatsappLink.href = `https://wa.me/233200635642?text=${message}`;
                         
                         modal.style.display = 'flex';
@@ -2612,7 +3682,7 @@
                         const product = products[productId];
                         
                         if (product) {
-                            const message = `Hello Navis Signature!%0A%0AI'm interested in this product:%0A*Product:* ${product.title}%0A*Price:* ${product.price}%0A%0ACan you please provide more information?`;
+                            const message = `Hello Navis Signature!%0A%0AI'm interested in this product:%0A*Product:* ${product.title}%0A%0ACan you please provide more information?`;
                             window.open(`https://wa.me/233200635642?text=${message}`, '_blank');
                         }
                     }
@@ -2678,27 +3748,6 @@
                     document.body.style.overflow = 'auto';
                 }
             });
-            
-            // Add CSS for product-image wrapper
-            const style = document.createElement('style');
-            style.textContent = `
-                .product-image {
-                    width: 100%;
-                    height: 300px;
-                    overflow: hidden;
-                }
-                .product-image img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    display: block;
-                    transition: var(--transition);
-                }
-                .gallery-item:hover .product-image img {
-                    transform: scale(1.05);
-                }
-            `;
-            document.head.appendChild(style);
         });
     </script>
 </body>
