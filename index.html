@@ -55,6 +55,7 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(30, 58, 138, 0.05);
             transition: var(--transition);
+            height: 80px;
         }
         
         nav.scrolled {
@@ -72,6 +73,7 @@
             align-items: center;
             flex-shrink: 0;
             transition: var(--transition);
+            height: 50px;
         }
         
         .logo:hover {
@@ -104,6 +106,7 @@
             text-transform: uppercase;
             transition: var(--transition);
             position: relative;
+            padding: 5px 0;
         }
         
         .nav-links a:after {
@@ -130,24 +133,23 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
-            gap: 4px;
-            padding: 5px;
-            position: absolute;
-            right: 5%;
-            top: 50%;
-            transform: translateY(-50%);
+            gap: 6px;
+            padding: 8px;
+            position: relative;
+            z-index: 1001;
         }
         
         .mobile-menu-toggle span {
-            width: 25px;
+            width: 30px;
             height: 3px;
             background: var(--primary-blue);
             border-radius: 3px;
             transition: var(--transition);
+            display: block;
         }
         
         .mobile-menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
+            transform: rotate(45deg) translate(8px, 8px);
         }
         
         .mobile-menu-toggle.active span:nth-child(2) {
@@ -155,7 +157,7 @@
         }
         
         .mobile-menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
+            transform: rotate(-45deg) translate(8px, -8px);
         }
         
         /* Mobile Navigation */
@@ -172,6 +174,7 @@
             opacity: 0;
             transform: translateX(-100%);
             transition: var(--transition);
+            overflow-y: auto;
         }
         
         .mobile-nav.active {
@@ -299,6 +302,9 @@
             position: relative;
             overflow: hidden;
             border: 2px solid var(--accent-blue);
+            cursor: pointer;
+            min-width: 44px;
+            min-height: 44px;
         }
         
         .btn:before {
@@ -590,6 +596,11 @@
             font-size: 0.9rem;
             letter-spacing: 1px;
             border-radius: 3px;
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .gallery-category.active, .gallery-category:hover {
@@ -693,6 +704,11 @@
             font-weight: 500;
             transition: var(--transition);
             margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+            min-width: 44px;
+            min-height: 44px;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .whatsapp-btn:hover {
@@ -739,6 +755,8 @@
             z-index: 1001;
             align-items: center;
             justify-content: center;
+            padding: 20px;
+            overflow-y: auto;
         }
         
         .modal-content {
@@ -748,6 +766,8 @@
             border-radius: 10px;
             overflow: hidden;
             position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
         }
         
         .modal-close {
@@ -765,6 +785,9 @@
             cursor: pointer;
             z-index: 2;
             transition: var(--transition);
+            border: none;
+            min-width: 44px;
+            min-height: 44px;
         }
         
         .modal-close:hover {
@@ -1204,6 +1227,7 @@
             justify-content: space-between;
             align-items: center;
             transition: var(--transition);
+            padding: 10px 0;
         }
         
         .faq-question:hover {
@@ -1234,6 +1258,9 @@
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
             z-index: 999;
             transition: var(--transition);
+            text-decoration: none;
+            min-width: 44px;
+            min-height: 44px;
         }
         
         .whatsapp-float:hover {
@@ -1293,6 +1320,9 @@
             background: #334155;
             color: #cbd5e1;
             transition: var(--transition);
+            text-decoration: none;
+            min-width: 44px;
+            min-height: 44px;
         }
         
         .social-links a:hover {
@@ -1335,6 +1365,7 @@
             nav {
                 padding: 1rem 5%;
                 justify-content: space-between;
+                height: 70px;
             }
             
             .nav-links {
@@ -1347,6 +1378,8 @@
             
             .mobile-nav {
                 display: block;
+                top: 70px;
+                height: calc(100vh - 70px);
             }
             
             .logo {
@@ -1421,6 +1454,27 @@
                 height: 50px;
                 font-size: 1.5rem;
             }
+            
+            .page {
+                padding-top: 70px;
+            }
+            
+            .modal-body {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+            
+            .modal-image img {
+                height: 300px;
+            }
+            
+            .modal-details h3 {
+                font-size: 1.8rem;
+            }
+            
+            .faq-question {
+                font-size: 1.1rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -1448,13 +1502,53 @@
             .logo img {
                 height: 30px;
             }
+            
+            .gallery-item-overlay {
+                padding: 1rem;
+            }
+            
+            .gallery-item-overlay h3 {
+                font-size: 1.2rem;
+            }
+            
+            .gallery-item-overlay p {
+                font-size: 0.9rem;
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
+            
+            .modal-body {
+                padding: 1rem;
+            }
+            
+            .modal-image img {
+                height: 250px;
+            }
+            
+            .modal-details h3 {
+                font-size: 1.5rem;
+            }
+            
+            .mobile-nav-links {
+                padding: 1rem;
+            }
+            
+            .mobile-nav-links li {
+                margin: 1.5rem 0;
+            }
+            
+            .mobile-nav-links a {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <a href="/index.html" class="logo"><img src="images/image0.png" alt="Navis Signature"></a>
+        <a href="#home" class="logo">Navis Signature</a>
         <div class="mobile-menu-toggle">
             <span></span>
             <span></span>
@@ -1471,7 +1565,7 @@
     <!-- Mobile Navigation -->
     <div class="mobile-nav">
         <ul class="mobile-nav-links">
-            <li><a href="#home" data-page="home">Home</a></li>
+            <li><a href="#home" data-page="home" class="active">Home</a></li>
             <li><a href="#gallery" data-page="gallery">Gallery</a></li>
             <li><a href="#about" data-page="about">About</a></li>
             <li><a href="#contact" data-page="contact">Contact</a></li>
@@ -1520,12 +1614,12 @@
             </div>
             
             <div class="featured-in">
-                <p></p>
+                <p>As featured in</p>
                 <div class="brand-logos">
-                    <!-- <span>Vogue</span>
+                    <span>Vogue</span>
                     <span>GQ</span>
                     <span>Esquire</span>
-                    <span></span> -->
+                    <span>Forbes</span>
                 </div>
             </div>
         </div>
@@ -1592,6 +1686,7 @@
                         </div>
                         <div class="author-info">
                             <h4>Chisom Nmaemeka</h4>
+                            <p>Business Executive</p>
                         </div>
                     </div>
                 </div>
@@ -1604,6 +1699,7 @@
                         </div>
                         <div class="author-info">
                             <h4>Akinrinlola Mayowa</h4>
+                            <p>Fashion Editor</p>
                         </div>
                     </div>
                 </div>
@@ -1616,6 +1712,7 @@
                         </div>
                         <div class="author-info">
                             <h4>David Obi</h4>
+                            <p>Art Collector</p>
                         </div>
                     </div>
                 </div>
@@ -1645,7 +1742,10 @@
                 <div class="gallery-grid">
                     <!-- Shoes images (image1 - image10) -->
                     <div class="gallery-item" data-category="shoes" data-product="1">
-                        <img src="images/image1.jpg" alt="Classic Oxford Shoes">
+                        <div class="product-image">
+                            <!-- Fallback image if local image doesn't load -->
+                            <img src="images/image1.jpg" alt="Classic Oxford Shoes" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
                         <div class="product-info">
                             <h4>Classic Oxford</h4>
                             <p>Timeless elegance with hand-stitched leather</p>
@@ -1661,7 +1761,9 @@
                     </div>
                     
                     <div class="gallery-item" data-category="shoes" data-product="2">
-                        <img src="images/image2.jpg" alt="Modern Loafers">
+                        <div class="product-image">
+                            <img src="images/image2.jpg" alt="Modern Loafers" onerror="this.src='https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
                         <div class="product-info">
                             <h4>Modern Loafers</h4>
                             <p>Contemporary comfort with premium suede</p>
@@ -1677,7 +1779,9 @@
                     </div>
                     
                     <div class="gallery-item" data-category="shoes" data-product="3">
-                        <img src="images/image3.jpg" alt="Artisan Boots">
+                        <div class="product-image">
+                            <img src="images/image3.jpg" alt="Artisan Boots" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
                         <div class="product-info">
                             <h4>Artisan Boots</h4>
                             <p>Rugged sophistication with weather-resistant finish</p>
@@ -1693,7 +1797,9 @@
                     </div>
                     
                     <div class="gallery-item" data-category="shoes" data-product="4">
-                        <img src="images/image4.jpg" alt="Evening Formal Shoes">
+                        <div class="product-image">
+                            <img src="images/image4.jpg" alt="Evening Formal Shoes" onerror="this.src='https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
                         <div class="product-info">
                             <h4>Evening Formal</h4>
                             <p>Black tie excellence with patent leather</p>
@@ -1709,7 +1815,9 @@
                     </div>
                     
                     <div class="gallery-item" data-category="shoes" data-product="5">
-                        <img src="images/image5.jpg" alt="Casual Elegance Shoes">
+                        <div class="product-image">
+                            <img src="images/image5.jpg" alt="Casual Elegance Shoes" onerror="this.src='https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
                         <div class="product-info">
                             <h4>Casual Elegance</h4>
                             <p>Relaxed refinement with Italian calfskin</p>
@@ -1725,7 +1833,9 @@
                     </div>
                     
                     <div class="gallery-item" data-category="shoes" data-product="6">
-                        <img src="images/image7.jpg" alt="Heritage Wingtip Shoes">
+                        <div class="product-image">
+                            <img src="images/image7.jpg" alt="Heritage Wingtip Shoes" onerror="this.src='https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
                         <div class="product-info">
                             <h4>Heritage Wingtip</h4>
                             <p>Classic broguing with antiqued finish</p>
@@ -1741,7 +1851,9 @@
                     </div>
                     
                     <div class="gallery-item" data-category="shoes" data-product="7">
-                        <img src="images/image9.jpg" alt="Chelsea Boots">
+                        <div class="product-image">
+                            <img src="images/image9.jpg" alt="Chelsea Boots" onerror="this.src='https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
                         <div class="product-info">
                             <h4>Chelsea Boots</h4>
                             <p>Modern classic with elastic side panels</p>
@@ -1764,7 +1876,9 @@
                 <div class="gallery-grid">
                     <!-- Sandals images -->
                     <div class="gallery-item" data-category="sandals" data-product="8">
-                        <img src="images/image10.jpg" alt="Designer Sandals">
+                        <div class="product-image">
+                            <img src="images/image10.jpg" alt="Designer Sandals" onerror="this.src='https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
                         <div class="product-info">
                             <h4>Designer Sandals</h4>
                             <p>Sophisticated design with premium leather</p>
@@ -1780,7 +1894,9 @@
                     </div>
                     
                     <div class="gallery-item" data-category="sandals" data-product="9">
-                        <img src="images/image12.jpg" alt="Comfort Sandals">
+                        <div class="product-image">
+                            <img src="images/image12.jpg" alt="Comfort Sandals" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
                         <div class="product-info">
                             <h4>Comfort Sandals</h4>
                             <p>Ultimate comfort with ergonomic design</p>
@@ -1803,7 +1919,9 @@
                 <div class="gallery-grid">
                     <!-- Slippers images -->
                     <div class="gallery-item" data-category="slippers" data-product="10">
-                        <img src="images/image13.jpg" alt="Premium Slippers">
+                        <div class="product-image">
+                            <img src="images/image13.jpg" alt="Premium Slippers" onerror="this.src='https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
                         <div class="product-info">
                             <h4>Premium Slippers</h4>
                             <p>Luxury comfort with soft fabric lining</p>
@@ -1819,7 +1937,9 @@
                     </div>
                     
                     <div class="gallery-item" data-category="slippers" data-product="11">
-                        <img src="images/image14.jpg" alt="Casual Slippers">
+                        <div class="product-image">
+                            <img src="images/image14.jpg" alt="Casual Slippers" onerror="this.src='https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
                         <div class="product-info">
                             <h4>Casual Slippers</h4>
                             <p>Everyday comfort with durable sole</p>
@@ -1842,7 +1962,9 @@
                 <div class="gallery-grid">
                     <!-- Belts images -->
                     <div class="gallery-item" data-category="belts" data-product="12">
-                        <img src="images/image15.jpg" alt="Leather Belt">
+                        <div class="product-image">
+                            <img src="images/image15.jpg" alt="Leather Belt" onerror="this.src='https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
                         <div class="product-info">
                             <h4>Leather Belt</h4>
                             <p>Genuine leather with polished buckle</p>
@@ -1858,7 +1980,9 @@
                     </div>
                     
                     <div class="gallery-item" data-category="belts" data-product="13">
-                        <img src="images/image16.jpg" alt="Designer Belt">
+                        <div class="product-image">
+                            <img src="images/image16.jpg" alt="Designer Belt" onerror="this.src='https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
                         <div class="product-info">
                             <h4>Designer Belt</h4>
                             <p>Exquisite design with premium finish</p>
@@ -1886,7 +2010,7 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="/images/image00.jpg" alt="Artisan at work">
+                    <img src="images/image00.jpg" alt="Artisan at work" onerror="this.src='https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                 </div>
                 <div class="about-text">
                     <h3>Where Tradition Meets Innovation</h3>
@@ -2006,7 +2130,7 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
+                    <form id="contactForm">
                         <input type="text" placeholder="Your Name" required>
                         <input type="email" placeholder="Your Email" required>
                         <input type="text" placeholder="Subject">
@@ -2342,6 +2466,14 @@
                 mobileNav.classList.toggle('active');
             });
             
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                });
+            });
+            
             // Check URL hash on load
             function checkHash() {
                 const hash = window.location.hash.substring(1);
@@ -2437,7 +2569,7 @@
                         
                         // Update WhatsApp link
                         const whatsappLink = document.getElementById('modal-whatsapp');
-                        const message = `Hello Navis Signature!%0A%0AI would like to order:%0A*Product:* ${product.title}%0A*Price:* ${product.price}%0A*Image:* ${window.location.origin}/${product.image}%0A%0APlease provide me with more details about availability and ordering.`;
+                        const message = `Hello Navis Signature!%0A%0AI would like to order:%0A*Product:* ${product.title}%0A*Price:* ${product.price}%0A%0APlease provide me with more details about availability and ordering.`;
                         whatsappLink.href = `https://wa.me/233200635642?text=${message}`;
                         
                         modal.style.display = 'flex';
@@ -2459,10 +2591,23 @@
                 }
             });
             
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
             // Direct WhatsApp order from gallery items
             document.querySelectorAll('.gallery-item').forEach(item => {
                 item.addEventListener('click', function(e) {
-                    if (!e.target.classList.contains('view-details-btn')) {
+                    // Don't trigger if clicking on view details button
+                    if (!e.target.classList.contains('view-details-btn') && 
+                        !e.target.closest('.view-details-btn') &&
+                        !e.target.classList.contains('gallery-item-overlay') &&
+                        !e.target.closest('.gallery-item-overlay')) {
+                        
                         const productId = this.getAttribute('data-product');
                         const product = products[productId];
                         
@@ -2495,6 +2640,65 @@
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(el);
             });
+            
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will get back to you soon.');
+                    contactForm.reset();
+                });
+            }
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (mobileNav.classList.contains('active') && 
+                    !e.target.closest('.mobile-nav') && 
+                    !e.target.closest('.mobile-menu-toggle')) {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                }
+            });
+            
+            // Prevent body scroll when mobile menu is open
+            mobileMenuToggle.addEventListener('click', function() {
+                if (this.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Close mobile menu when resizing to larger screens
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Add CSS for product-image wrapper
+            const style = document.createElement('style');
+            style.textContent = `
+                .product-image {
+                    width: 100%;
+                    height: 300px;
+                    overflow: hidden;
+                }
+                .product-image img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                    transition: var(--transition);
+                }
+                .gallery-item:hover .product-image img {
+                    transform: scale(1.05);
+                }
+            `;
+            document.head.appendChild(style);
         });
     </script>
 </body>
